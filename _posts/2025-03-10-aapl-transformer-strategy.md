@@ -15,7 +15,7 @@ We trained a transformer model on 5 years of Apple stock data, including feature
 
 import numpy as np
 import pandas as pd
-import yfinance as yf
+import yfinance as yf  
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error
