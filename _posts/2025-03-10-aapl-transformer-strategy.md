@@ -13,7 +13,7 @@ We trained a transformer model on 5 years of Apple stock data, including feature
 
 ```python
 
-mport numpy as np
+import numpy as np
 import pandas as pd
 import yfinance as yf
 import matplotlib.pyplot as plt
