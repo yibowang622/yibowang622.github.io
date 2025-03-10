@@ -22,7 +22,7 @@ title: "AI-Driven Stock Trading: Quantitative Strategies with Machine Learning"
 email: yibowang622@gmail.com
 description: "Exploring machine learning, quantitative trading, and AI-driven stock predictions."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://yibowang622.github.io"
 github_username:  yibowang622
 
 # Build settings
