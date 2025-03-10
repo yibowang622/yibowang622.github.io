@@ -1,0 +1,26 @@
+
+---
+
+#### **2️⃣ Fix Font Size and Make the Text More Readable**
+By default, Jekyll uses **Minima**, which has **small fonts** for blog posts. You can adjust the font size using **CSS styling**.
+
+#### **✅ Increase Font Size for Blog Posts**
+You need to edit your **`assets/css/style.scss`** file (or create one if it doesn’t exist). Inside, add:
+
+```css
+body {
+    font-size: 18px; /* Increase default font size */
+    line-height: 1.6; /* Improve spacing for readability */
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+code {
+    font-size: 16px; /* Increase code block font size */
+    background-color: #f4f4f4;
+    padding: 5px;
+    border-radius: 5px;
+}
