@@ -27,6 +27,7 @@ from torch.utils.data import DataLoader, TensorDataset
 ```
 
 # ✅ Step 1: Download stock data
+
 stock_symbol = "AAPL"
 df = yf.download(stock_symbol, start="2015-01-01", end="2024-01-01")
 
@@ -42,13 +43,15 @@ train_size = int(len(data_scaled) * 0.8)
 train_data, test_data = data_scaled[:train_size], data_scaled[train_size:]
 
 
-# ✅ Step 3: Function to create sequences
+### ✅ Step 3: Function to create sequences
+```python
 def create_sequences(dataset, seq_length=60):
     X, y = [], []
     for i in range(len(dataset) - seq_length):
         X.append(dataset[i:i + seq_length])
         y.append(dataset[i + seq_length])
     return np.array(X), np.array(y)
+```
 
 
 # Create train and test sequences
