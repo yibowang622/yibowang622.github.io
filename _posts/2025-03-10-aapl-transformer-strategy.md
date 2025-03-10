@@ -6,9 +6,11 @@ categories: [Machine Learning, Quantitative Trading]
 tags: [AAPL, transformers, trading, stocks]
 ---
 ### 🚀 Overview
+
 In this post, we explore how transformer-based models can predict AAPL stock price movements using historical data.
 
 ### 📊 Model Setup
+
 We trained a transformer model on 5 years of Apple stock data, including features such as moving averages, RSI, and volume.
 
 ```python
