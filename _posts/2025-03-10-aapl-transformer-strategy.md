@@ -12,7 +12,6 @@ In this post, we explore how transformer-based models can predict AAPL stock pri
 We trained a transformer model on 5 years of Apple stock data, including features such as moving averages, RSI, and volume.
 
 ```python
-
 import numpy as np
 import pandas as pd
 import yfinance as yf  
