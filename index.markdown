@@ -4,7 +4,6 @@
 
 layout: default
 ---
-<h1>{{ id="githubio">github.io }}</h1>
 {% for post in site.posts %}
   <article>
     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
