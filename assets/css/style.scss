@@ -18,7 +18,7 @@ h1 {
   font-weight: bold !important;
 }
 
-/* Step headings - make smaller but bold */
+/* Standard headings */
 h2, .post h2, section h2, article h2, .markdown-body h2 {
   font-size: 0.8em !important;
   font-weight: bold !important;
@@ -186,4 +186,30 @@ footer, .site-footer {
   display: block;
   height: 50px;
   clear: both;
+}
+
+/* Target step headings by text content - extreme approach */
+[id*="step"], 
+h2:contains("Step"), 
+h2:contains("✅"),
+p:contains("Step 1"),
+p:contains("Step 2"),
+p:contains("Step 3"),
+p:contains("✅"),
+div:contains("Step 1"),
+div:contains("Step 2"),
+div:contains("Step 3") {
+  font-size: 0.8em !important;
+  font-weight: bold !important;
+  display: block !important;
+}
+
+/* Target any emoji checkmarks */
+.emoji, .octicon {
+  font-size: 0.8em !important;
+}
+
+/* Additional universal fixes */
+strong, b {
+  font-size: inherit !important;
 }
