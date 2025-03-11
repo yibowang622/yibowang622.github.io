@@ -1,3 +1,8 @@
+---
+---
+
+@import "{{ site.theme }}";
+
 /* Post styling */
 .post {
   max-width: 800px;
@@ -41,6 +46,7 @@
   text-align: center;
 }
 
+/* Button styling */
 .button {
   display: inline-block;
   background-color: #0366d6;
@@ -53,6 +59,17 @@
 
 .button:hover {
   background-color: #024ea2;
+}
+
+/* Add these new button styles */
+.github-button {
+  background-color: #24292e;
+  margin-right: 10px;
+}
+
+.colab-button {
+  background-color: #F9AB00;
+  color: #202124;
 }
 
 code {
