@@ -4,6 +4,9 @@ title: "Using Transformers to Predict AAPL Stock: A Quantitative Approach"
 date: 2025-03-07
 categories: [Machine Learning, Quantitative Trading]
 tags: [AAPL, transformers, trading, stocks]
+image: "/assets/images/aapl-chart.jpg"
+jupyter_notebook: "https://github.com/yibowang622/yibowang622.github.io/blob/main/notebooks/aapl-transformer.ipynb"
+colab_notebook: "https://colab.research.google.com/drive/1KhQN-_fkEPnfrXTmB1xf_Nnx2mB6nOb6"
 ---
 ### 🚀 Overview
 In this post, we explore how transformer-based models can predict AAPL stock price movements using historical data.
@@ -13,7 +16,7 @@ We trained a transformer model on 5 years of Apple stock data, including feature
 
 ```python
 
-mport numpy as np
+import numpy as np
 import pandas as pd
 import yfinance as yf
 import matplotlib.pyplot as plt

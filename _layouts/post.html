@@ -4,7 +4,29 @@ layout: default
 <div class="post">
   <h1>{{ page.title }}</h1>
   <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
+  
+  {% if page.image %}
+    <div class="post-featured-image">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    </div>
+  {% endif %}
+  
   <div class="post-content">
     {{ content }}
   </div>
-</div>
+  
+  {% if page.jupyter_notebook or page.colab_notebook %}
+    <div class="jupyter-link">
+      {% if page.jupyter_notebook %}
+        <a href="{{ page.jupyter_notebook }}" target="_blank" class="button github-button">
+          <span>View on GitHub</span>
+        </a>
+      {% endif %}
+      {% if page.colab_notebook %}
+        <a href="{{ page.colab_notebook }}" target="_blank" class="button colab-button">
+          <span>Open in Colab</span>
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
+
