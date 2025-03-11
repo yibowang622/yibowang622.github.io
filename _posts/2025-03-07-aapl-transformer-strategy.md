@@ -44,7 +44,7 @@ scaler = MinMaxScaler(feature_range=(0, 1))  # Scale between 0 and 1
 data_scaled = scaler.fit_transform(data)
 ```
 
-# Split into train and test sets (80% train, 20% test)
+# ✅ Split into train and test sets (80% train, 20% test)
 
 ```python
 train_size = int(len(data_scaled) * 0.8)
@@ -62,7 +62,7 @@ def create_sequences(dataset, seq_length=60):
     return np.array(X), np.array(y)
 ```
 
-# Create train and test sequences
+# ✅ Create train and test sequences
 
 ```python
 seq_length = 60  # Use last 60 days for prediction
