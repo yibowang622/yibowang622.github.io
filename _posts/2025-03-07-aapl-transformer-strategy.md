@@ -4,7 +4,7 @@ title: "Using Transformers to Predict AAPL Stock: A Quantitative Approach"
 date: 2025-03-07
 categories: ["machine learning", "quantitative trading"]
 image: "/assets/images/aapl-chart.jpg"
-colab_notebook: "https://colab.research.google.com/drive/1KhQN-_fkEPnfrXTmB1xf_Nnx2mB6nOb6"
+colab_notebook: "https://colab.research.google.com/drive/1KhQN-_fkEPnfrXTmB1xf_Nnx2mB6nOb6?usp=sharing"
 ---
 ### 🚀 Overview
 In this post, we explore how transformer-based models can predict AAPL stock price movements using historical data.
