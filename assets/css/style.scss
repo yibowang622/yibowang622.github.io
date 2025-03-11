@@ -131,3 +131,23 @@ pre code {
   border: none;
   white-space: pre;
 }
+
+/* Override theme defaults for width and layout */
+.wrapper {
+  max-width: 2000px !important;
+  width: 95% !important;
+  margin: 0 auto !important;
+}
+
+section {
+  width: auto !important;
+  float: none !important;
+  position: static !important;
+}
+
+header {
+  width: auto !important;
+  float: none !important;
+  position: static !important;
+  text-align: center !important;
+}
