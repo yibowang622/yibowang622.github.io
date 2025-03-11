@@ -27,6 +27,7 @@ from torch.utils.data import DataLoader, TensorDataset
 ```
 
 # ✅ Step 1: Download stock data
+
 ```python
 stock_symbol = "AAPL"
 df = yf.download(stock_symbol, start="2015-01-01", end="2024-01-01")
@@ -37,18 +38,21 @@ data = df[['Close']].values  # Convert to NumPy array
 ```
 
 # ✅ Step 2: Normalize the data
+
 ```python
 scaler = MinMaxScaler(feature_range=(0, 1))  # Scale between 0 and 1
 data_scaled = scaler.fit_transform(data)
 ```
 
 # Split into train and test sets (80% train, 20% test)
+
 ```python
 train_size = int(len(data_scaled) * 0.8)
 train_data, test_data = data_scaled[:train_size], data_scaled[train_size:]
 ```
 
 # ✅ Step 3: Function to create sequences
+
 ``````python
 def create_sequences(dataset, seq_length=60):
     X, y = [], []
@@ -59,6 +63,7 @@ def create_sequences(dataset, seq_length=60):
 ```
 
 # Create train and test sequences
+
 ```python
 seq_length = 60  # Use last 60 days for prediction
 X_train, y_train = create_sequences(train_data, seq_length)
@@ -66,6 +71,7 @@ X_test, y_test = create_sequences(test_data, seq_length)
 ```
 
 # ✅ Step 4: Convert to PyTorch tensors
+
 ```python
 X_train = torch.tensor(X_train, dtype=torch.float32)
 y_train = torch.tensor(y_train, dtype=torch.float32)
@@ -74,18 +80,21 @@ y_test = torch.tensor(y_test, dtype=torch.float32)
 ```
 
 # ✅ Fix Shape Issues
+
 ```python
 y_train = y_train.squeeze(-1)  # Ensure y_train shape is (num_samples, 1)
 y_test = y_test.squeeze(-1)
 ```
 
 # ✅ Fix X_train Shape: Ensure batch-first format (batch_size, seq_length, features)
+
 ```python
 X_train = X_train.permute(0, 2, 1)  # (num_samples, features, seq_length)
 X_test = X_test.permute(0, 2, 1)
 ```
 
 # ✅ Step 5: Define DataLoader to train in batches
+
 ```python
 batch_size = 16
 train_dataset = TensorDataset(X_train, y_train)
@@ -93,6 +102,7 @@ train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 ```
 
 # ✅ Step 6: Define Transformer Model
+
 ```python
 class StockPriceTransformer(nn.Module):
     def __init__(self, input_dim, model_dim, num_heads, num_layers, output_dim):
@@ -118,6 +128,7 @@ class StockPriceTransformer(nn.Module):
 ```
 
 # ✅ Step 7: Initialize Transformer model
+
 ```python
 input_dim = 1
 model_dim = 32
@@ -130,12 +141,14 @@ model = StockPriceTransformer(input_dim, model_dim, num_heads, num_layers, outpu
 ```
 
 # ✅ Step 8: Define Loss and Optimizer
+
 ```python
 criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 ```
 
 # ✅ Step 9: Training loop
+
 ```python
 num_epochs = 20
 
@@ -157,6 +170,7 @@ for epoch in range(num_epochs):
 ```
 
 # ✅ Step 10: Evaluate the model
+
 ```python
 model.eval()
 with torch.no_grad():
@@ -164,12 +178,14 @@ with torch.no_grad():
 ```
 
 # ✅ Fix Shape Mismatch Before Inverse Scaling
+
 ```python
 y_test_actual = scaler.inverse_transform(y_test.numpy().reshape(-1, 1))
 predictions = scaler.inverse_transform(predictions.reshape(-1, 1))
 ```
 
 # ✅ Step 11: Plot Results
+
 ```python
 plt.figure(figsize=(12, 6))
 plt.plot(y_test_actual, label="Actual Prices", color="blue", linestyle="-")
@@ -183,6 +199,7 @@ plt.show()
 ```
 
 # ✅ Step 12: Calculate Mean Squared Error (MSE)
+
 ```python
 mse = mean_squared_error(y_test_actual, predictions)
 print(f"Transformer Model Mean Squared Error: {mse:.4f}")
