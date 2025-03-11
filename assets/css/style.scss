@@ -10,27 +10,15 @@
   padding: 0 20px;
 }
 
-/* Main title - keep it large */
-.post-title, .page-title, 
-.post h1:first-child, article h1:first-child,
-h1 {
+/* Heading styles */
+.post h1 {
   font-size: 2em !important;
   font-weight: bold !important;
 }
 
-/* Standard headings */
-h2, .post h2, section h2, article h2, .markdown-body h2 {
-  font-size: 0.8em !important;
-  font-weight: bold !important;
-  margin-top: 1.5em !important;
-  margin-bottom: 0.5em !important;
-}
-
-/* Section headings */
-h3, .post h3 {
-  font-size: 1.25em !important;
-  margin-top: 1.2em !important;
-  font-weight: bold !important;
+.post h3 {
+  font-size: 1.25em;
+  margin-top: 1.2em;
 }
 
 .post-date {
@@ -53,7 +41,7 @@ h3, .post h3 {
 
 .post-content {
   line-height: 1.6;
-  margin-bottom: 60px !important;
+  margin-bottom: 30px;
 }
 
 /* Content spacing */
@@ -67,6 +55,12 @@ h3, .post h3 {
   padding-left: 2em;
 }
 
+/* Add space between code blocks and paragraphs */
+.post-content pre + p,
+.post-content p + pre {
+  margin-top: 1.5em;
+}
+
 .post-content img {
   max-width: 100%;
   height: auto;
@@ -75,12 +69,12 @@ h3, .post h3 {
   border-radius: 5px;
 }
 
-/* Button styling */
 .jupyter-link {
   margin: 30px 0;
   text-align: center;
 }
 
+/* Button styling */
 .button {
   display: inline-block;
   background-color: #0366d6;
@@ -95,6 +89,7 @@ h3, .post h3 {
   background-color: #024ea2;
 }
 
+/* Add these new button styles */
 .github-button {
   background-color: #24292e;
   margin-right: 10px;
@@ -112,10 +107,8 @@ pre {
   padding: 12px;
   overflow-x: auto;
   font-size: 0.9em;
-  margin: 20px 0 !important;
+  margin: 1em 0;
   border: 1px solid #e1e4e8;
-  clear: both !important;
-  display: block !important;
 }
 
 code {
@@ -131,11 +124,6 @@ pre code {
   background-color: transparent;
   border: none;
   white-space: pre;
-}
-
-/* Fix spacing between elements */
-p + pre, pre + p {
-  margin-top: 20px !important;
 }
 
 /* Override theme defaults for width and layout */
@@ -158,58 +146,12 @@ header {
   text-align: center !important;
 }
 
-/* Fix layout issues */
-section, .main-content {
-  overflow: visible !important;
-}
-
-article, .post {
-  overflow: hidden !important;
+/* Fix code block spacing and overlap */
+pre {
+  margin: 20px 0 !important;
   clear: both !important;
-}
-
-/* Fix footer overlap in all browsers */
-body {
-  padding-bottom: 100px !important;
-}
-
-footer, .site-footer {
-  position: relative !important;
-  bottom: auto !important;
-  margin-top: 40px !important;
-  clear: both !important;
-}
-
-/* Add extra space after content */
-.post-content:after {
-  content: "";
-  display: block;
-  height: 50px;
-  clear: both;
-}
-
-/* Target step headings by text content - extreme approach */
-[id*="step"], 
-h2:contains("Step"), 
-h2:contains("✅"),
-p:contains("Step 1"),
-p:contains("Step 2"),
-p:contains("Step 3"),
-p:contains("✅"),
-div:contains("Step 1"),
-div:contains("Step 2"),
-div:contains("Step 3") {
-  font-size: 0.8em !important;
-  font-weight: bold !important;
   display: block !important;
 }
 
-/* Target any emoji checkmarks */
-.emoji, .octicon {
-  font-size: 0.8em !important;
-}
-
-/* Additional universal fixes */
-strong, b {
-  font-size: inherit !important;
-}
+p + pre, pre + p {
+  margin-top: 20px !important;
