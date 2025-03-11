@@ -151,3 +151,20 @@ header {
   position: static !important;
   text-align: center !important;
 }
+
+/* Target step headings specifically */
+.post-content h2:contains("Step"),
+.post h2:contains("Step"),
+h2:contains("Step"),
+h2 strong,
+h2 em,
+h2[id*="step"] {
+  font-size: 0.8em !important;
+  font-weight: normal !important;
+}
+
+/* Target emoji in headings */
+h2 .emoji,
+h2:contains("✅") {
+  font-size: 0.8em !important;
+}
