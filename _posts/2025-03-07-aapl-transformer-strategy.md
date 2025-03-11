@@ -186,4 +186,4 @@ plt.show()
 ```python
 mse = mean_squared_error(y_test_actual, predictions)
 print(f"Transformer Model Mean Squared Error: {mse:.4f}")
-```python
+```
