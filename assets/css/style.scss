@@ -10,17 +10,20 @@
   padding: 0 20px;
 }
 
-/* Heading styles */
-.post h1 {
+/* Main title styling */
+.post > h1:first-child {
   font-size: 2em !important;
   font-weight: bold !important;
 }
 
+/* Section headings (Overview, Model Setup) */
 .post h3 {
-  font-size: 1.25em;
+  font-size: 1.25em !important;
+  font-weight: bold !important;
   margin-top: 1.2em;
 }
 
+/* Post metadata */
 .post-date {
   color: #777;
   margin-bottom: 20px;
@@ -167,18 +170,34 @@ article, .post {
   clear: both !important;
 }
 
-/* Target the post-content div specifically */
-.post-content h2,
-.post-content h1,
-.post-content strong,
-.post-content b {
+/* Target all h1 headings inside post-content except main title */
+.post-content h1 {
   font-size: 0.8em !important;
+  line-height: 1.2 !important;
   font-weight: bold !important;
 }
 
-/* Preserve your main title size */
-.post h1 {
-  font-size: 2em !important;
+/* Target specific IDs for headings that need to be smaller */
+h1[id^="step-"], 
+h1[id^="fix-"],
+h1[id="create-train-and-test-sequences"],
+h1[id^="split-"],
+h1[id*="-step-"],
+h1[id*="-convert-"],
+h1[id*="-define-"],
+h1[id*="-training-"],
+h1[id*="-evaluate-"],
+h1[id*="-plot-"],
+h1[id*="-calculate-"] {
+  font-size: 0.8em !important;
+  line-height: 1.2 !important;
+  font-weight: bold !important;
+}
+
+/* Fix code blocks spacing */
+.language-python {
+  margin: 15px 0 !important;
+  clear: both !important;
 }
 
 /* This should help with footer issues */
