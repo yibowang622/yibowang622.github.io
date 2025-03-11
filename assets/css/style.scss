@@ -22,9 +22,21 @@
   margin-bottom: 0.5em;
 }
 
+/* Make step headings smaller */
+.post h2:first-child {
+  font-size: 1.2em;
+}
+
 .post h3 {
   font-size: 1.25em;
   margin-top: 1.2em;
+}
+
+/* Special styling for step headings with checkmarks */
+.post h2:contains("Step"), .post h2:contains("✅") {
+  font-size: 1.2em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 .post-date {
