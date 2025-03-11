@@ -1,26 +1,73 @@
----
----
-
-@import "{{ site.theme }}";
-
-.home {
+/* Post styling */
+.post {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-.posts {
-  margin-top: 2em;
-}
-
-.post-preview {
-  margin-bottom: 2em;
-  padding-bottom: 1em;
-  border-bottom: 1px solid #e8e8e8;
-  clear: both;
-}
-
-.post-meta {
-  color: #828282;
+.post-date {
+  color: #777;
+  margin-bottom: 20px;
   font-style: italic;
-  margin-bottom: 1em;
+}
+
+.post-featured-image {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.post-featured-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post-content {
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+.jupyter-link {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  background-color: #0366d6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #024ea2;
+}
+
+code {
+  padding: 2px 4px;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
+
+pre code {
+  padding: 0;
+}
+
+pre {
+  background-color: #f6f8fa;
+  padding: 16px;
+  border-radius: 3px;
+  overflow: auto;
 }
