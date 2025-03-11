@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="home">
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+  
+  <h2>Latest Posts</h2>
+  <div class="posts">
+    {% for post in site.posts %}
+      <article class="post-preview">
+        <h3>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+        <p class="post-excerpt">
+          {{ post.excerpt }}
+        </p>
+        <a href="{{ post.url | relative_url }}">Read more...</a>
+      </article>
+    {% endfor %}
+  </div>
+</div>

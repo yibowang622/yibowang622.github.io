@@ -1,0 +1,26 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.posts {
+  margin-top: 2em;
+}
+
+.post-preview {
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #e8e8e8;
+  clear: both;
+}
+
+.post-meta {
+  color: #828282;
+  font-style: italic;
+  margin-bottom: 1em;
+}
