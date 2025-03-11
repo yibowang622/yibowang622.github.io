@@ -175,3 +175,49 @@ h1:contains("✅"), h2:contains("✅"), h3:contains("✅"), h4:contains("✅") {
   font-size: 0.8em !important;
   font-weight: normal !important;
 }
+
+/* Target headings with more specificity */
+.post-content h2, 
+section h2, 
+#main-content h2,
+.markdown-body h2 {
+  font-size: 0.8em !important;
+  font-weight: normal !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* Fix code block spacing and overlap */
+pre {
+  margin: 20px 0 !important;
+  clear: both !important;
+  display: block !important;
+}
+
+p + pre, pre + p {
+  margin-top: 20px !important;
+}
+
+/* Fix footer overlap */
+body {
+  padding-bottom: 100px !important;
+}
+
+.post-content {
+  margin-bottom: 60px !important;
+}
+
+footer {
+  position: relative !important;
+  margin-top: 40px !important;
+}
+
+/* Fix layout issues */
+section, .main-content {
+  overflow: visible !important;
+}
+
+article, .post {
+  overflow: hidden !important;
+  clear: both !important;
+}
