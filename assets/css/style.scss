@@ -10,6 +10,23 @@
   padding: 0 20px;
 }
 
+/* Heading styles */
+.post h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.post h2 {
+  font-size: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.post h3 {
+  font-size: 1.25em;
+  margin-top: 1.2em;
+}
+
 .post-date {
   color: #777;
   margin-bottom: 20px;
@@ -31,6 +48,23 @@
 .post-content {
   line-height: 1.6;
   margin-bottom: 30px;
+}
+
+/* Content spacing */
+.post-content p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+.post-content ul, .post-content ol {
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+/* Add space between code blocks and paragraphs */
+.post-content pre + p,
+.post-content p + pre {
+  margin-top: 1.5em;
 }
 
 .post-content img {
@@ -72,7 +106,20 @@
   color: #202124;
 }
 
+/* Code block styles */
+pre {
+  background-color: #f6f8fa;
+  border-radius: 5px;
+  padding: 12px;
+  overflow-x: auto;
+  font-size: 0.9em;
+  margin: 1em 0;
+  border: 1px solid #e1e4e8;
+}
+
 code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.9em;
   padding: 2px 4px;
   background-color: #f6f8fa;
   border-radius: 3px;
@@ -80,11 +127,7 @@ code {
 
 pre code {
   padding: 0;
-}
-
-pre {
-  background-color: #f6f8fa;
-  padding: 16px;
-  border-radius: 3px;
-  overflow: auto;
+  background-color: transparent;
+  border: none;
+  white-space: pre;
 }
