@@ -155,3 +155,34 @@ pre {
 
 p + pre, pre + p {
   margin-top: 20px !important;
+}
+
+/* Fix layout issues */
+section, .main-content {
+  overflow: visible !important;
+}
+
+article, .post {
+  overflow: hidden !important;
+  clear: both !important;
+}
+
+/* Target the post-content div specifically */
+.post-content h2,
+.post-content h1,
+.post-content strong,
+.post-content b {
+  font-size: 0.8em !important;
+  font-weight: bold !important;
+}
+
+/* Preserve your main title size */
+.post h1 {
+  font-size: 2em !important;
+}
+
+/* This should help with footer issues */
+footer {
+  position: static !important;
+  margin-top: 50px !important;
+}
