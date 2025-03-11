@@ -168,3 +168,10 @@ h2 .emoji,
 h2:contains("✅") {
   font-size: 0.8em !important;
 }
+
+/* Target all headings with checkmarks or "Step" regardless of heading level */
+h1:contains("Step"), h2:contains("Step"), h3:contains("Step"), h4:contains("Step"),
+h1:contains("✅"), h2:contains("✅"), h3:contains("✅"), h4:contains("✅") {
+  font-size: 0.8em !important;
+  font-weight: normal !important;
+}
