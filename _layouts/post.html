@@ -9,13 +9,13 @@ layout: default
   <div class="post-featured-image">
     <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
   </div>
-{% elsif page.images %}
-  {% for image in page.images %}
-    <div class="post-featured-image">
-      <img src="{{ image | relative_url }}" alt="{{ page.title }}">
-    </div>
-  {% endfor %}
-{% endif %}
+  {% elsif page.images %}
+    {% for image in page.images %}
+      <div class="post-featured-image">
+        <img src="{{ image | relative_url }}" alt="{{ page.title }}">
+      </div>
+    {% endfor %}
+  {% endif %}
   
   {% if page.jupyter_notebook or page.colab_notebook %}
     <div class="jupyter-link">
