@@ -4,9 +4,9 @@ title: "A simple buy and sell strategy of transformer performance on simulation 
 date: 2025-03-13
 categories: ["machine learning", "quantitative trading"]
 images:
- -"/assets/images/portfoliogrowth.jpg"
- -"/assets/images/drawndown.jpg"
- -"/assets/images/actual and predicted price.jpg"
+ - "/assets/images/portfoliogrowth.jpg"
+ - "/assets/images/drawndown.jpg"
+ - "/assets/images/actual and predicted price.jpg"
 colab_notebook: "https://colab.research.google.com/drive/1-T4U5QOx9p6SAVT0hZij7uyzBJvDAvJM?usp=sharing"
 ---
 ### 🚀 Overview
