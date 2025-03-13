@@ -16,6 +16,10 @@ layout: default
       </div>
     {% endfor %}
   {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
   
   {% if page.jupyter_notebook or page.colab_notebook %}
     <div class="jupyter-link">
