@@ -53,3 +53,6 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+readme_index:
+  enabled: false
+
