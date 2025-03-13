@@ -15,10 +15,8 @@ In this post, we explore how transformer-based models can predict AAPL stock pri
 ### 📊 Model Setup
 To evaluate the trading performance of a transformer-based model, we simulated 50 days of stock price data with a gradual uptrend and random noise. The model generates buy/sell signals based on predicted price movements, applying the following strategy:
 
-✅ BUY → When the predicted price is higher than the current price by a set threshold.
-
-✅ SELL → When the predicted price is lower than the current price by a set threshold.
-
+✅ BUY → When the predicted price is higher than the current price by a set threshold.<br>
+✅ SELL → When the predicted price is lower than the current price by a set threshold.<br>
 ✅ HOLD → If the difference is within the threshold range.
 
 ```python
