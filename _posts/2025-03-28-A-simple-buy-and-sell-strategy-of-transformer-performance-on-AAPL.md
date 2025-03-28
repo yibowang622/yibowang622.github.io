@@ -327,6 +327,8 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
+# ✅ Training progress
+```python
 Epoch [5/50], Loss: 0.0012
 Epoch [10/50], Loss: 0.0010
 Epoch [15/50], Loss: 0.0006
@@ -338,9 +340,38 @@ Epoch [40/50], Loss: 0.0004
 Epoch [45/50], Loss: 0.0004
 Epoch [50/50], Loss: 0.0003
 Running backtest on 393 data points from 2022-06-08T00:00:00.000000000 to 2023-12-29T00:00:00.000000000
+```
 
+# ✅ Backtest results
+```python
 ===== BACKTEST RESULTS =====
 📊 Final Portfolio Value: $10166.47
 📈 Total Return: 1.66%
 ⚡ Sharpe Ratio: -0.49
 📉 Max Drawdown: -1.34%
+```
+### Backtest Performance
+Running backtest on 393 data points from 2022-06-08 to 2023-12-29
+
+### 📊 Key Metrics
+
+📈 Final Portfolio Value: $10,166.47<br>
+💰 Total Return: 1.66%<br>
+⚡ Sharpe Ratio: -0.49<br>
+📉 Max Drawdown: -1.34%<br>
+
+### Analysis
+Our transformer model showed promising learning capacity, with training loss decreasing 75% over 50 epochs. However, the moderate 1.66% return in backtesting reveals the challenge of translating pattern recognition into profitable trading.
+The negative Sharpe ratio suggests that while our strategy preserved capital (low drawdown), it didn't generate returns commensurate with the risk taken. This highlights the difficulty of consistently predicting market movements even with sophisticated deep learning architectures.
+These results demonstrate both the potential and limitations of transformer models in financial forecasting. Future work should explore incorporating additional market signals and optimizing trading thresholds to enhance performance.
+
+### Future Directions
+To enhance this approach, we could:
+
+Incorporate additional features beyond price data (trading volume, sentiment analysis, etc.)
+Experiment with different sequence lengths and prediction horizons
+Implement more sophisticated position sizing based on prediction confidence
+Test different thresholds for generating trading signals
+Explore ensemble methods combining transformer predictions with other model architectures
+
+This project demonstrates both the potential and limitations of applying transformer architectures to financial time series forecasting. While perfect prediction remains elusive, transformer-based approaches show promise as components in a broader trading strategy framework.
