@@ -327,3 +327,20 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
+Epoch [5/50], Loss: 0.0012
+Epoch [10/50], Loss: 0.0010
+Epoch [15/50], Loss: 0.0006
+Epoch [20/50], Loss: 0.0005
+Epoch [25/50], Loss: 0.0005
+Epoch [30/50], Loss: 0.0006
+Epoch [35/50], Loss: 0.0004
+Epoch [40/50], Loss: 0.0004
+Epoch [45/50], Loss: 0.0004
+Epoch [50/50], Loss: 0.0003
+Running backtest on 393 data points from 2022-06-08T00:00:00.000000000 to 2023-12-29T00:00:00.000000000
+
+===== BACKTEST RESULTS =====
+📊 Final Portfolio Value: $10166.47
+📈 Total Return: 1.66%
+⚡ Sharpe Ratio: -0.49
+📉 Max Drawdown: -1.34%
