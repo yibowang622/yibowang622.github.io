@@ -10,7 +10,7 @@ images:
 colab_notebook: "https://colab.research.google.com/drive/1-T4U5QOx9p6SAVT0hZij7uyzBJvDAvJM?usp=sharing"
 ---
 ### 🚀 Overview
-In this post, we explore how transformer-based models can predict AAPL stock price movements using historical data.
+In this post, we explore how transformer-based models can predict simulated stock price movements using historical data.
 
 ### 📊 Model Setup
 To evaluate the trading performance of a transformer-based model, we simulated 50 days of stock price data with a gradual uptrend and random noise. The model generates buy/sell signals based on predicted price movements, applying the following strategy:
