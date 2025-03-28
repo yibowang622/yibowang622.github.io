@@ -325,5 +325,5 @@ plt.ylabel("Stock Price ($)")
 plt.title("Actual vs. Predicted Price")
 plt.legend()
 plt.grid()
-```
 plt.show()
+```
