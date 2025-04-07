@@ -249,11 +249,11 @@ weighted avg      0.521     0.528     0.519       197
 ### 📊 Key Performance Metrics
 Running evaluation on test data from late 2022 to 2023:
 
-📈 AUC Score: ~0.53-0.56
-💰 Classification Accuracy: ~53-55% (varies by threshold)
-⚡ F1 Score: ~0.45-0.50 for positive class
-📉 Precision/Recall Trade-off: Higher thresholds increase precision but reduce recall
-AUC Score: 0.5024922118380062
+📈 AUC Score: ~0.53-0.56<br>
+💰 Classification Accuracy: ~53-55% (varies by threshold)<br>
+⚡ F1 Score: ~0.45-0.50 for positive class<br>
+📉 Precision/Recall Trade-off: Higher thresholds increase precision but reduce recall<br>
+AUC Score: 0.5024922118380062<br>
 
 ### Analysis
 Our transformer model demonstrated gradual learning capacity, with training loss decreasing approximately 40% over 20 epochs. The model shows modest predictive ability above random chance (50%), indicating it has captured some signal in the noisy financial data.
