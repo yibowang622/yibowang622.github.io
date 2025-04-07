@@ -5,7 +5,6 @@ date: 2025-04-07
 categories: ["machine learning", "quantitative trading"]
 images:
  - "/assets/images/4-7probability of up movement.png"
- - "/assets/images/4-7roc curve.png"
 colab_notebook: "https://colab.research.google.com/drive/1gZnFbPW4ovX166wCTsKJCzMesPIbWHPj?usp=sharing"
 ---
 
