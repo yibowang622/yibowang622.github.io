@@ -13,10 +13,10 @@ In this project, we implemented a transformer-based binary classifier to predict
 ### 📊 Model Setup
 We developed a probabilistic transformer model that processes 20-day sequences of stock returns and momentum indicators. Key model components include:
 
-* This is a bullet point Embedding layer to project 2-dimensional features into 32-dimensional space
-Multi-head attention mechanism (4 heads) to capture temporal relationships
-Two transformer encoder layers for sequence processing
-Fully connected output layer with sigmoid activation for probabilistic classification
+* Embedding layer to project 2-dimensional features into 32-dimensional space
+* Multi-head attention mechanism (4 heads) to capture temporal relationships
+* Two transformer encoder layers for sequence processing
+* Fully connected output layer with sigmoid activation for probabilistic classification
 
 ### 📈 Prediction Strategy
 Our model outputs probabilities for next-day upward price movements, enabling the following decision framework:
