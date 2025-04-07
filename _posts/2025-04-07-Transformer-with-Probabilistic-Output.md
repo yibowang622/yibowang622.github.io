@@ -126,7 +126,7 @@ all_labels = np.array(all_labels)
 ```
 
 # Try multiple thresholds and find the best one
-
+```python
 thresholds = [0.5, 0.6, 0.7, 0.8]
 best_f1 = 0
 best_threshold = 0.5
@@ -146,8 +146,10 @@ for threshold in thresholds:
     if f1 > best_f1:
         best_f1 = f1
         best_threshold = threshold
+```
 
 # Final evaluation with best threshold
+```python
 preds = (all_probs > best_threshold).astype(int)
 print(f"\n--- Final Evaluation (Best Threshold = {best_threshold}) ---")
 print(classification_report(all_labels, preds, digits=3))
