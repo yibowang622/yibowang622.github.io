@@ -180,3 +180,54 @@ plt.title(f'ROC Curve (AUC = {roc_auc_score(all_labels, all_probs):.3f})')
 plt.tight_layout()
 plt.show()
 ```
+# Backtest results
+```python
+Epoch 1/20 | Loss: 17.8364
+Epoch 2/20 | Loss: 17.3796
+Epoch 3/20 | Loss: 17.1381
+Epoch 4/20 | Loss: 16.7638
+Epoch 5/20 | Loss: 16.5494
+Epoch 6/20 | Loss: 16.1990
+Epoch 7/20 | Loss: 15.6744
+Epoch 8/20 | Loss: 15.0100
+Epoch 9/20 | Loss: 14.3243
+Epoch 10/20 | Loss: 13.7324
+Epoch 11/20 | Loss: 13.1561
+Epoch 12/20 | Loss: 13.2154
+Epoch 13/20 | Loss: 11.4317
+Epoch 14/20 | Loss: 11.2112
+Epoch 15/20 | Loss: 10.4534
+Epoch 16/20 | Loss: 9.1153
+Epoch 17/20 | Loss: 8.1754
+Epoch 18/20 | Loss: 7.4207
+Epoch 19/20 | Loss: 6.8907
+Epoch 20/20 | Loss: 6.2215
+
+--- Evaluation (Threshold = 0.5) ---
+Report keys: ['0.0', '1.0', 'accuracy', 'macro avg', 'weighted avg']
+F1 Score: 0.601
+
+--- Evaluation (Threshold = 0.6) ---
+Report keys: ['0.0', '1.0', 'accuracy', 'macro avg', 'weighted avg']
+F1 Score: 0.551
+
+--- Evaluation (Threshold = 0.7) ---
+Report keys: ['0.0', '1.0', 'accuracy', 'macro avg', 'weighted avg']
+F1 Score: 0.503
+
+--- Evaluation (Threshold = 0.8) ---
+Report keys: ['0.0', '1.0', 'accuracy', 'macro avg', 'weighted avg']
+F1 Score: 0.459
+
+--- Final Evaluation (Best Threshold = 0.5) ---
+              precision    recall  f1-score   support
+
+         0.0      0.479     0.378     0.422        90
+         1.0      0.556     0.654     0.601       107
+
+    accuracy                          0.528       197
+   macro avg      0.517     0.516     0.512       197
+weighted avg      0.521     0.528     0.519       197
+
+AUC Score: 0.5024922118380062
+```
