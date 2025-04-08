@@ -364,6 +364,7 @@ Winning Trades: 50
 
 ### Performance Results
 After 20 epochs of training, the model demonstrated consistent convergence with gradually decreasing loss. When applied to out-of-sample test data, the strategy delivered impressive performance metrics:
+
 | Metric | Value |
 |--------|------:|
 | Total Return | 5.33% |
@@ -376,22 +377,22 @@ After 20 epochs of training, the model demonstrated consistent convergence with 
 ### Analysis and Insights
 The performance metrics reveal several important insights:
 
-**1. Strong Risk-Adjusted Returns:** The Sharpe ratio of 3.35 indicates exceptional risk-adjusted performance, significantly outperforming most traditional trading strategies.
-**2. Capital Preservation:** The maximum drawdown of just 2.07% demonstrates the effectiveness of the risk management system, preserving capital during adverse market conditions.
-**3. Consistent Win Rate:** With 60.98% of trades being profitable, the model shows a clear edge in predicting price movements, well above the 50% expected from random chance.
-**4. Reasonable Activity Level:** 82 trades over the test period indicates selective entry points rather than overtrading, which helps minimize transaction costs.
-**5. Scalability Potential:** The modest position sizing (10% of capital per trade) suggests room for scaling the strategy with larger capital deployment.
+**1. Strong Risk-Adjusted Returns:** The Sharpe ratio of 3.35 indicates exceptional risk-adjusted performance, significantly outperforming most traditional trading strategies.<br>
+**2. Capital Preservation:** The maximum drawdown of just 2.07% demonstrates the effectiveness of the risk management system, preserving capital during adverse market conditions.<br>
+**3. Consistent Win Rate:** With 60.98% of trades being profitable, the model shows a clear edge in predicting price movements, well above the 50% expected from random chance.<br>
+**4. Reasonable Activity Level:** 82 trades over the test period indicates selective entry points rather than overtrading, which helps minimize transaction costs.<br>
+**5. Scalability Potential:** The modest position sizing (10% of capital per trade) suggests room for scaling the strategy with larger capital deployment.<br>
 
 The equity curve visualization shows promising upward trajectory with relatively controlled drawdowns, validating the model's ability to capture meaningful patterns in stock price movements.
 
 ### Future Enhancements
 While the current results are encouraging, several enhancements could further improve performance:
 
-**1. Feature Expansion:** Incorporate additional technical indicators, sentiment analysis, and macroeconomic variables.
-**2. Hyperparameter Optimization:** Systematic tuning of model parameters, sequence length, and trading thresholds.
-**3. Multi-Asset Application:** Extend the model to predict movements across a diverse portfolio of stocks or other asset classes.
-**4. Adaptive Position Sizing:** Dynamically adjust position sizes based on model confidence and market volatility.
-**5. Ensemble Approaches:** Combine predictions from multiple model architectures to improve robustness.
+**1. Feature Expansion:** Incorporate additional technical indicators, sentiment analysis, and macroeconomic variables.<br>
+**2. Hyperparameter Optimization:** Systematic tuning of model parameters, sequence length, and trading thresholds.<br>
+**3. Multi-Asset Application:** Extend the model to predict movements across a diverse portfolio of stocks or other asset classes.<br>
+**4. Adaptive Position Sizing:** Dynamically adjust position sizes based on model confidence and market volatility.<br>
+**5. Ensemble Approaches:** Combine predictions from multiple model architectures to improve robustness.<br>
 
 ### Conclusion
 This project demonstrates that transformer-based deep learning models can effectively capture patterns in financial time series data when implemented with proper feature engineering and risk management. The strong Sharpe ratio and controlled drawdowns suggest that this approach has practical application potential in algorithmic trading.
