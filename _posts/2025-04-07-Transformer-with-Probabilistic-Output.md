@@ -21,9 +21,9 @@ We developed a probabilistic transformer model that processes 20-day sequences o
 ### 📈 Prediction Strategy
 Our model outputs probabilities for next-day upward price movements, enabling the following decision framework:
 
-✅ BUY → When predicted probability exceeds threshold (optimal: 0.6-0.8)
-❌ SELL/SHORT → When predicted probability falls below threshold
-⏹️ NO POSITION → When confidence is insufficient at either extreme
+✅ BUY → When predicted probability exceeds threshold (optimal: 0.6-0.8)<br>
+❌ SELL/SHORT → When predicted probability falls below threshold<br>
+⏹️ NO POSITION → When confidence is insufficient at either extreme<br>
 
 ```python
 import yfinance as yf
