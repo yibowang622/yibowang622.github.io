@@ -3,8 +3,6 @@ layout: post
 title: "FinBERT: A Domain-Specific Language Model for Financial Sentiment Analysis — Scientific Review"
 date: 2025-04-14
 categories: ["machine learning", "quantitative trading"]
-images:
- - "/assets/images/4-14 finbert.png"
 ---
 
 <style>
@@ -54,6 +52,12 @@ FinBERT can detect subtle cues—such as cautious optimism or soft pessimism—i
 
 The development of FinBERT was led by Yi Yang, whose research site yya518.github.io/finbert documents the technical background and outreach of the project. The model has been presented to both academic and industry audiences, including the Hong Kong Monetary Authority (HKMA), Society of Quantitative Analysts (SQA), AllianceBernstein, and J.P. Morgan, as well as conferences in finance and accounting.
 Its impact has extended beyond academia, serving as a critical component in sentiment-based signal generation, event studies, and predictive modeling in modern quantitative investment strategies.
+
+FinBERT is publicly accessible through the Hugging Face Model Hub, allowing practitioners to seamlessly integrate it into NLP pipelines via the transformers library. Its open-source availability has enabled wide adoption in both research and production environments, accelerating the shift from rule-based financial text interpretation toward contextual, transformer-based sentiment modeling.
+As language models continue to evolve, FinBERT stands as a foundational tool in the emerging field of financial LLMs.
+
+![FinBERT Architecture](/assets/images/4-14 finbert.png)
+FinBERT Architecture and Financial Sentiment Analysis Workflow
 
 FinBERT is publicly accessible through the Hugging Face Model Hub, allowing practitioners to seamlessly integrate it into NLP pipelines via the transformers library. Its open-source availability has enabled wide adoption in both research and production environments, accelerating the shift from rule-based financial text interpretation toward contextual, transformer-based sentiment modeling.
 As language models continue to evolve, FinBERT stands as a foundational tool in the emerging field of financial LLMs.
