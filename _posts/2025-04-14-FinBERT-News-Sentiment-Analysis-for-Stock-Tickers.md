@@ -11,9 +11,9 @@ This project demonstrates a simple yet effective way to analyze sentiment in fin
 ### The Problem
 Investors and traders are constantly bombarded with news that could impact stock prices. Manually tracking and analyzing this information is time-consuming and subject to human bias. An automated sentiment analysis tool can help by:
 
-1.Aggregating relevant news from multiple sources<br>
-2.Providing an objective sentiment classification (positive, negative, or neutral)<br>
-3.Quantifying the confidence of these classifications<br>
+1. Aggregating relevant news from multiple sources<br>
+2. Providing an objective sentiment classification (positive, negative, or neutral)<br>
+3. Quantifying the confidence of these classifications<br>
 
 ### Implementation
 ### Data Collection
