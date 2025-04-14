@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "FinBERT: A Domain-Specific Language Model for Financial Sentiment Analysis — Scientific Review"
+title: "FinBERT: A Domain-Specific Language Model for Financial Sentiment Analysis"
 date: 2025-04-14
 categories: ["machine learning", "quantitative trading"]
 ---
@@ -52,7 +52,7 @@ categories: ["machine learning", "quantitative trading"]
   }
 </style>
 
-### FinBERT: A Domain-Specific Language Model for Financial Sentiment Analysis — Scientific Review
+### Scientific Review — FinBERT: A Domain-Specific Language Model for Financial Sentiment Analysis
 The rapid growth of financial textual data—ranging from earnings calls and regulatory filings to analyst commentary and market news—has created a pressing need for models capable of parsing the nuanced, context-sensitive language unique to the financial domain.
 FinBERT, introduced in the paper "FinBERT: A Large Language Model for Extracting Information from Financial Text" by Allen H. Huang, Hui Wang, and Yi Yang (DOI: <a href="https://doi.org/10.1111/1911-3846.12832" target="_blank">10.1111/1911-3846.12832</a>), represents a seminal step in addressing this need.
 
