@@ -103,5 +103,5 @@ By refining our approach to news collection and expanding the analysis to full a
 
 ### Resources
 
-FinBERT on Hugging Face
-NewsAPI Documentation
+- [FinBERT on Hugging Face](https://huggingface.co/yiyanghkust/finbert-tone)
+- [NewsAPI Documentation](https://newsapi.org/docs)
