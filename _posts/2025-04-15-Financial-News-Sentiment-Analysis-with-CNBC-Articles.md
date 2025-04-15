@@ -9,6 +9,36 @@ colab_notebook: "https://colab.research.google.com/drive/1D42gO8AoCPPcdY56My-kk5
 In this post, I'll explore how to analyze the sentiment of financial news articles from CNBC using Python, web scraping, and a specialized financial language model. Financial sentiment analysis provides valuable insights for investors, analysts, and researchers who want to understand the emotional tone behind market news.
 The approach demonstrated here uses a combination of web scraping techniques with the FinBERT model, a financial sentiment analysis tool trained specifically for financial text. Unlike a traditional Python environment setup, this implementation runs entirely in Google Colab, which presents unique challenges and solutions that I'll explain throughout.
 
+### Analysis Approach
+### Data Collection
+I scraped CNBC's website using a hybrid approach that combines elements of both Scrapy and Beautiful Soup. While a traditional Python environment would typically use Scrapy with a proper project structure, command-line interface, and persistent storage, Google Colab required adaptations to work within its notebook environment.
+The main challenges faced in the Colab environment included:
+
+**1. Reactor issues:** Scrapy's underlying Twisted framework can only be started once per Colab session<br>
+**2. Non-persistent file system:** Files are lost between runtime restarts<br>
+**3. Integration limitations:** Combining interactive notebook cells with asynchronous web scraping frameworks<br>
+
+To overcome these limitations, I created a solution that:
+
+* Uses BeautifulSoup for HTML parsing and requests for HTTP calls<br>
+* Implements token-aware chunking to handle long articles<br>
+* Processes articles sequentially with appropriate delays<br>
+* Provides real-time feedback within the notebook<br>
+
+### Sentiment Analysis
+For the sentiment analysis, I used the FinBERT model from HuggingFace, which is specifically trained on financial texts. The model classifies text into three categories:
+
+* Positive
+* Negative
+* Neutral
+
+A key technical challenge was handling the token limit of the FinBERT model (512 tokens). To solve this, I implemented a chunking approach that:
+
+1. Tokenizes the full article text<br>
+2. Splits it into chunks of 450 tokens (safely below the limit)<br>
+3. Analyzes each chunk separately<br>
+4. Aggregates the sentiment scores across all chunks<br>
+
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -162,37 +192,17 @@ df.to_json('/content/cnbc_results.json', orient='records')
 print(f"Results saved to /content/cnbc_results.json")
 ```
 
-### Analysis Approach
-### Data Collection
-I scraped CNBC's website using a hybrid approach that combines elements of both Scrapy and Beautiful Soup. While a traditional Python environment would typically use Scrapy with a proper project structure, command-line interface, and persistent storage, Google Colab required adaptations to work within its notebook environment.
-The main challenges faced in the Colab environment included:
-
-**1. Reactor issues:** Scrapy's underlying Twisted framework can only be started once per Colab session<br>
-**2. Non-persistent file system:** Files are lost between runtime restarts<br>
-**3. Integration limitations:** Combining interactive notebook cells with asynchronous web scraping frameworks<br>
-
-To overcome these limitations, I created a solution that:
-
-* Uses BeautifulSoup for HTML parsing and requests for HTTP calls<br>
-* Implements token-aware chunking to handle long articles<br>
-* Processes articles sequentially with appropriate delays<br>
-* Provides real-time feedback within the notebook<br>
-
-### Sentiment Analysis
-For the sentiment analysis, I used the FinBERT model from HuggingFace, which is specifically trained on financial texts. The model classifies text into three categories:
-
-* Positive
-* Negative
-* Neutral
-
-A key technical challenge was handling the token limit of the FinBERT model (512 tokens). To solve this, I implemented a chunking approach that:
-
-1. Tokenizes the full article text<br>
-2. Splits it into chunks of 450 tokens (safely below the limit)<br>
-3. Analyzes each chunk separately<br>
-4. Aggregates the sentiment scores across all chunks<br>
-
 ### Results
+```python
+Scraping Results:
+title	sentiment_label	confidence	url
+0	U.S. stock futures slide after S&P 500 posts b...	Positive	0.505471	https://www.cnbc.com/2025/04/14/stock-market-t...
+1	Trump administration says it lacks authority t...	Neutral	0.749853	https://www.cnbc.com/2025/04/14/abrego-garcia-...
+2	Sports teams adopt tactile tech for blind and ...	Neutral	0.854449	https://www.cnbc.com/2025/04/13/sports-teams-t...
+3	Adobe takes stake in Synthesia, startup behind...	Neutral	0.653253	https://www.cnbc.com/2025/04/15/adobe-invests-...
+4	Trump, top aides fuel tariff confusion by ques...	Neutral	0.748785	https://www.cnbc.com/2025/04/13/trump-commerce...
+```
+
 The analysis of five recent CNBC articles revealed:
 
 **1. Stock market update:** Positive sentiment (50.5% confidence)<br>
