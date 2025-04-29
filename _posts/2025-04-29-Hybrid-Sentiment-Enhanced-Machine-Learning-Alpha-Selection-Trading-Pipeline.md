@@ -7,6 +7,7 @@ colab_notebook: "https://colab.research.google.com/drive/1D42gO8AoCPPcdY56My-kk5
 ---
 ### Introduction
 This project presents a complete end-to-end trading system that integrates financial news sentiment analysis, technical indicator-based stock screening, and machine learning probability forecasts.
+
 The goal is to construct a multi-layered decision pipeline that replicates realistic quantitative trading workflows:
 
 * 📚 Scraping financial news articles with Scrapy
