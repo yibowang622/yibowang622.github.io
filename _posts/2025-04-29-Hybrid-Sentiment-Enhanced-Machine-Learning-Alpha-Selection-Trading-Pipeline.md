@@ -23,3 +23,9 @@ The goal is to construct a multi-layered decision pipeline that replicates reali
 * 🔄 Backtesting and evaluating strategy performance using Sharpe Ratio, Max Drawdown, and Total Returns
 
 This approach simulates institutional research methodology, enhancing the robustness and interpretability of trading decisions.
+
+### 1. Sentiment Analysis and Aggregation
+We scrape financial news articles using Scrapy and apply the FinBERT model to generate sentiment scores for each article.
+To align sentiment with stock trading decisions, we aggregate sentiment scores for each stock over the past 7 days by calculating the average confidence score for positive sentiment.
+
+Only stocks with a 7-day average sentiment score greater than 0.6 are considered for further selection.
