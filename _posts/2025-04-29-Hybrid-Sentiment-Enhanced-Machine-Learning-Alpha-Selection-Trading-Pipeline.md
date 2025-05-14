@@ -30,3 +30,21 @@ We scrape financial news articles using Scrapy and apply the FinBERT model to ge
 The complete scraping results can be viewed in [this gist](https://gist.github.com/yibowang622/5f109ca7a5cf6f5a3e2b69e7dc66946f).
 
 To align sentiment with stock trading decisions, we aggregate sentiment scores for each stock over the past 7 days by calculating the average confidence score for positive sentiment. Only stocks with a 7-day average sentiment score greater than 0.5 are considered for further selection.
+
+**Implementation Files:**
+- [Web Scraper (cnbc_spider.py)](src/cnbc_spider.py) 
+- [Sentiment Aggregation (sentiment_aggregation.py)](src/sentiment_aggregation.py)
+
+**Sample Results:**
+
+| Stock | avg_sentiment_score | article_count |
+|-------|---------------------|---------------|
+| BA    | 1.0                 | 1            |
+| BRK   | 1.0                 | 1             |
+| AMZN  | 0.959               | 1            |
+| DB    | 0.667               | 2            |
+| META  | 0.667               | 1            |
+| NVS   | 0.5                 | 2            |
+
+
+[View complete sentiment results](data/sentiment_scores.csv)
