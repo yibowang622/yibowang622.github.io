@@ -90,14 +90,14 @@ Our alpha model assigns weights to different components:
 
 The mathematical formulation of our alpha score is:
 
-```
+```python
 score = (
     sentiment_score * 0.4 +
     volume_score * 0.2 +
     rsi_score * 0.2 +
     macd_score * 0.2
 )
-```python
+```
 
 This weighted approach allows us to rank stocks by their combined technical and sentiment signals, creating a daily watchlist of high-potential trading candidates.
 
