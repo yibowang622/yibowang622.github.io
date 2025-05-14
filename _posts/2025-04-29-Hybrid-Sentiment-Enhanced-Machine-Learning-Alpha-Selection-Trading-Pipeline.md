@@ -32,8 +32,10 @@ The complete scraping results can be viewed in [this gist](https://gist.github.c
 To align sentiment with stock trading decisions, we aggregate sentiment scores for each stock over the past 7 days by calculating the average confidence score for positive sentiment. Only stocks with a 7-day average sentiment score greater than 0.5 are considered for further selection.
 
 **Implementation Files:**
-- [Web Scraper (cnbc_spider.py)](/src/cnbc_spider.py) 
-- [Sentiment Aggregation (sentiment_aggregation.py)](/src/sentiment_aggregation.py)
+- [Download Web Scraper (cnbc_spider.py)](/src/cnbc_spider.py) or can be viewed in [this gist](https://gist.github.com/yibowang622/f5a8cc1752f62e6293810b31d0f891b2).
+
+- [Download Sentiment Aggregation (sentiment_aggregation.py)](/src/sentiment_aggregation.py) or can be viewed in [this gist](https://gist.github.com/yibowang622/735012a9938b7fc1597d120f0ea7acef).
+
 
 **Sample Results:**
 
@@ -47,4 +49,4 @@ To align sentiment with stock trading decisions, we aggregate sentiment scores f
 | NVS   | 0.5                 | 2            |
 
 
-[View complete sentiment results](/data/sentiment_scores.csv)
+[Download Sentiment Results](/data/sentiment_scores.csv)
