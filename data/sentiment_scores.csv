@@ -1,0 +1,7 @@
+stock,avg_sentiment_score,article_count
+BA,1.0,1
+BRK,1.0,1
+AMZN,0.959,1
+DB,0.667,2
+META,0.667,1
+NVS,0.5,2
