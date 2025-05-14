@@ -1,1 +1,1 @@
-This folder contains data files for the trading pipeline project.
+Data files including scraped news and sentiment scores
