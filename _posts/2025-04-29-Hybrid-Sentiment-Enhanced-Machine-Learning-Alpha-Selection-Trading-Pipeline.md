@@ -3,7 +3,6 @@ layout: post
 title: "Hybrid Sentiment-Enhanced Machine Learning + Alpha Selection Trading Pipeline"
 date: 2025-04-29
 categories: ["machine learning", "quantitative trading"]
-colab_notebook: "https://colab.research.google.com/drive/1D42gO8AoCPPcdY56My-kk5NNuD38S23q?usp=sharing"
 ---
 ### Introduction
 This project presents a complete end-to-end trading system that integrates financial news sentiment analysis, technical indicator-based stock screening, and machine learning probability forecasts.
@@ -145,3 +144,45 @@ Our ML model architecture includes:
 
 The model provides probability values for upward movement (P_up) and model performance metrics (AUC). These outputs serve as the final validation layer in our multi-factor decision pipeline.
 
+### 5. Trading Signal Generation
+
+The final step in our pipeline combines all previous layers into actionable trading signals. We implement a multi-threshold approach that filters stocks across multiple dimensions:
+
+1. **Alpha Score**: The weighted combination of sentiment and technical indicators must exceed 0.6
+2. **ML Predictions**: Probability of upward movement (P_up) must exceed 0.51
+3. **ML Quality**: The model's AUC (area under curve) must exceed 0.48
+
+**Implementation Files:**
+- [Pipe Combine Alpha + ML Scores (combine.py)](https://colab.research.google.com/drive/1CjxCpVEwIyMBiA27LfA9D54EZsl5LqtL?usp=sharing)
+
+The pipeline combines these signals through this simple yet effective code:
+
+```python
+# Merge alpha scores with ML predictions
+combined = pd.merge(alpha_df, ml_df, on='Ticker', how='inner')
+
+# Apply multi-threshold filtering
+final_watchlist = combined[
+    (combined['P_up'] > 0.51) &
+    (combined['AUC'] > 0.48) &
+    (combined['alpha_score'] > 0.6)
+]
+```
+
+**Final Trading Signals:**
+
+| Ticker | Sentiment | Articles | RSI   | MACD_Bullish | Above_SMA50 | alpha_score | P_up     | AUC      |
+|--------|-----------|----------|-------|--------------|-------------|-------------|----------|----------|
+| BA     | 1.0       | 1        | 82.06 | Yes          | Yes         | 0.8         | 0.517137 | 0.485358 |
+| DB     | 0.67      | 2        | 89.24 | Yes          | Yes         | 0.668       | 0.519094 | 0.489465 |
+
+[Download Final Signals](/data/final_signals.csv)
+
+After applying all filters, our pipeline identifies BA and DB as the top trading opportunities. These stocks have passed multiple validation layers:
+
+1. **Strong sentiment**: Both show positive news sentiment
+2. **Technical strength**: Both have bullish MACD and are above their 50-day moving averages
+3. **High alpha scores**: Both exceed our 0.6 alpha score threshold
+4. **ML confirmation**: Both have predicted upward probability > 0.51
+
+This multi-layered approach ensures we only trade stocks that have received validation from multiple independent analysis methods.
