@@ -186,3 +186,49 @@ After applying all filters, our pipeline identifies BA and DB as the top trading
 4. **ML confirmation**: Both have predicted upward probability > 0.51
 
 This multi-layered approach ensures we only trade stocks that have received validation from multiple independent analysis methods.
+
+### 6. Backtesting and Performance Evaluation
+
+The final step in our pipeline is to evaluate the performance of our trading strategy through comprehensive backtesting. We implemented a systematic approach with the following parameters:
+
+- **Initial Capital**: $10,000
+- **Position Size**: $1,000 per trade
+- **Risk Management**: 2% stop-loss, 4% take-profit
+- **Entry Criteria**: P_up > 0.5, RSI > 50, MACD > 0
+- **Holding Period**: Maximum 5 days per position
+
+**Implementation Files:**
+- [Backtesting Script (backtest.py)](https://colab.research.google.com/drive/1BDxGgawRXBra4NDiTyQte-M_94XwxFe4?usp=sharing)
+
+**Backtest Results:**
+
+| Ticker | P_up     | Return | CAGR  | Sharpe | Max_Drawdown | Win_Rate | Trades | Winning_Trades |
+|--------|----------|--------|-------|--------|--------------|----------|--------|----------------|
+| BA     | 0.517137 | 9.87%  | 12.93%| 4.29   | 2.44%        | 57.3%    | 89     | 51             |
+| DB     | 0.519094 | 6.80%  | 8.87% | 2.93   | 3.20%        | 50.0%    | 100    | 50             |
+
+[Download Backtest Results](/data/backtest_results.csv)
+
+The backtest results demonstrate the effectiveness of our hybrid approach:
+
+1. **Positive Returns**: Both stocks showed positive returns in the backtest period
+2. **Strong Risk-Adjusted Performance**: Sharpe ratios of 4.29 and 2.93 indicate excellent return per unit of risk
+3. **Low Drawdowns**: Maximum drawdowns remained below 3.5%, showing good capital preservation
+4. **Consistent Win Rates**: Both stocks maintained win rates of 50% or higher
+
+![BA Equity Curve](/assets/images/BA_equity_curve.png)
+![DB Equity Curve](/assets/images/DB_equity_curve.png)
+
+### Conclusion
+
+This project demonstrates the effectiveness of combining sentiment analysis, technical indicators, and machine learning in a unified trading framework. By processing financial news through NLP techniques and integrating this data with technical analysis, we create a more holistic view of potential trading opportunities.
+
+Key findings include:
+* Sentiment analysis provides valuable leading indicators for price movements
+* Technical indicators help filter and time entry points
+* The combined approach reduces false positives and improves risk-adjusted returns
+* Backtesting shows consistent positive performance with limited drawdowns
+
+The multi-layered approach of our pipeline - from sentiment analysis to technical screening to machine learning validation - creates a robust system that successfully identifies high-potential trading opportunities while maintaining strong risk management.
+
+Future improvements could include expanding the news sources, incorporating alternative data, and enhancing the machine learning model with attention mechanisms specifically tuned to financial time series.
