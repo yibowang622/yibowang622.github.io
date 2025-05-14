@@ -47,4 +47,4 @@ To align sentiment with stock trading decisions, we aggregate sentiment scores f
 | NVS   | 0.5                 | 2            |
 
 
-[View complete sentiment results](data/sentiment_scores.csv)
+[View complete sentiment results](/data/sentiment_scores.csv)
