@@ -26,6 +26,7 @@ This approach simulates institutional research methodology, enhancing the robust
 
 ### 1. Sentiment Analysis and Aggregation
 We scrape financial news articles using Scrapy and apply the FinBERT model to generate sentiment scores for each article.
-To align sentiment with stock trading decisions, we aggregate sentiment scores for each stock over the past 7 days by calculating the average confidence score for positive sentiment.
 
-Only stocks with a 7-day average sentiment score greater than 0.6 are considered for further selection.
+The complete scraping results can be viewed in [this gist](https://gist.github.com/yibowang622/5f109ca7a5cf6f5a3e2b69e7dc66946f).
+
+To align sentiment with stock trading decisions, we aggregate sentiment scores for each stock over the past 7 days by calculating the average confidence score for positive sentiment. Only stocks with a 7-day average sentiment score greater than 0.5 are considered for further selection.
