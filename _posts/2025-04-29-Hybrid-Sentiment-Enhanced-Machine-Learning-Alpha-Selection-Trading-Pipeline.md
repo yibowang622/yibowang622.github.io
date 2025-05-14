@@ -77,3 +77,71 @@ Our implementation includes robust error handling and rate limiting protection t
 | NVS    | 0.50      | 2        | 41.9 | Yes         | Yes         | 2484374    |
 
 [Download Screening Results](/data/screening_results.csv)
+
+### 3. Alpha Model Construction
+The core of our trading strategy is a weighted alpha model that combines sentiment signals with technical indicators. This approach creates a robust scoring system that prioritizes stocks with the highest probability of positive performance.
+
+Our alpha model assigns weights to different components:
+
+* Sentiment score (40%): News sentiment from our FinBERT analysis
+* RSI score (20%): Normalized inverse RSI for oversold conditions
+* MACD score (20%): Binary signal for bullish crossovers
+* Volume score (20%): Relative volume compared to 30-day average
+
+The mathematical formulation of our alpha score is:
+
+```
+score = (
+    sentiment_score * 0.4 +
+    volume_score * 0.2 +
+    rsi_score * 0.2 +
+    macd_score * 0.2
+)
+```python
+
+This weighted approach allows us to rank stocks by their combined technical and sentiment signals, creating a daily watchlist of high-potential trading candidates.
+
+**Implementation Files:**
+- [Download Alpha Score (alpha_score.py)](/src/alpha_score.py) or can be viewed in [this gist](https://gist.github.com/yibowang622/fd541f3f9359d74626c586276c449621).
+
+**Sample Results:**
+
+| Ticker | alpha_score |
+|--------|-------------|
+| BA     | 0.800       |
+| BRK    | 0.800       |
+| DB     | 0.668       |
+| NVS    | 0.600       |
+| AMZN   | 0.584       |
+| META   | 0.468       |
+
+[Download Alpha Score](/data/top_signals.csv)
+
+### 4. Machine Learning Probability Forecasts
+
+To enhance our decision-making process, we implement a Transformer-based machine learning model that generates probability forecasts for directional price movements. This model is trained on historical price patterns and calculates the probability of upward price movement.
+
+Our ML model architecture includes:
+* A Transformer encoder with multi-head attention
+* Sequence length of 20 days
+* Two primary features: price returns and momentum
+* Binary classification output (probability of price increase)
+
+**Implementation Files:**
+- [Transformer ML Model (transform_model.py)](https://colab.research.google.com/drive/15M9wl1AWaBM-SZkpoTxyILCabBoD5CoO?usp=sharing)
+
+**Sample Results:**
+
+| Ticker | P_up    | Best_Threshold | F1_Score | AUC      | Data_Source |
+|--------|---------|----------------|----------|----------|-------------|
+| BA     | 0.517137| 0.5            | 0        | 0.485358 | Historic    |
+| BRK    | 0.533452| 0.5            | 0        | 0.477690 | Historic    |
+| DB     | 0.519094| 0.5            | 0        | 0.489465 | Historic    |
+| NVS    | 0.480948| 0.5            | 0        | 0.517180 | Historic    |
+| AMZN   | 0.470642| 0.5            | 0        | 0.512692 | Historic    |
+| META   | 0.484280| 0.5            | 0        | 0.461475 | Historic    |
+
+[Download ML Predictions](/data/ml_predictions.csv)
+
+The model provides probability values for upward movement (P_up) and model performance metrics (AUC). These outputs serve as the final validation layer in our multi-factor decision pipeline.
+
