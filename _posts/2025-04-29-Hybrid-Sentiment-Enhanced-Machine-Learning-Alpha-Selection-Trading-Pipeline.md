@@ -216,8 +216,15 @@ The backtest results demonstrate the effectiveness of our hybrid approach:
 3. **Low Drawdowns**: Maximum drawdowns remained below 3.5%, showing good capital preservation
 4. **Consistent Win Rates**: Both stocks maintained win rates of 50% or higher
 
+**Equity Curves:**
+
 ![BA Equity Curve](/assets/images/BA_equity_curve.png)
+*Boeing (BA) - Equity Curve with 9.9% Return, 4.29 Sharpe Ratio, and 2.4% Max Drawdown*
+
 ![DB Equity Curve](/assets/images/DB_equity_curve.png)
+*Deutsche Bank (DB) - Equity Curve with 6.8% Return, 2.93 Sharpe Ratio, and 3.2% Max Drawdown*
+
+What's particularly notable in the equity curves is the strong performance in the latter part of the trading period. Both stocks show a period of consolidation followed by significant upward momentum, suggesting the strategy is able to preserve capital during sideways markets while capitalizing effectively on emerging trends.
 
 ### Conclusion
 
@@ -231,4 +238,13 @@ Key findings include:
 
 The multi-layered approach of our pipeline - from sentiment analysis to technical screening to machine learning validation - creates a robust system that successfully identifies high-potential trading opportunities while maintaining strong risk management.
 
-Future improvements could include expanding the news sources, incorporating alternative data, and enhancing the machine learning model with attention mechanisms specifically tuned to financial time series.
+### Future Improvements
+
+Several areas could enhance this trading system further:
+1. **Expanded News Sources**: Incorporating a wider variety of financial news sources
+2. **Alternative Data Integration**: Adding social media sentiment, earnings call transcripts, and insider trading data
+3. **Advanced ML Architectures**: Implementing attention mechanisms specifically tuned to financial time series
+4. **Portfolio Optimization**: Developing position sizing based on conviction levels and correlations
+5. **Adaptive Parameters**: Creating dynamic thresholds that adjust to market volatility regimes
+
+This project serves as a foundation for production-ready quantitative trading systems that combine traditional financial analysis with modern NLP and machine learning techniques.
