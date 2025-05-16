@@ -14,8 +14,32 @@
       .title-with-social {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 25px;
         flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      
+      .social-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .click-prompt {
+        font-size: 14px;
+        color: #586069;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      
+      .linkedin-btn {
+        transition: transform 0.2s;
+      }
+      
+      .linkedin-btn:hover {
+        transform: scale(1.05);
       }
     </style>
   </head>
@@ -24,9 +48,12 @@
       <header>
         <div class="title-with-social">
           <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-          <a href="https://www.linkedin.com/in/yibowang622/" target="_blank">
-            <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="28">
-          </a>
+          <div class="social-container">
+            <div class="click-prompt">Connect with me 👉</div>
+            <a href="https://www.linkedin.com/in/yibowang622/" target="_blank" class="linkedin-btn">
+              <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="30">
+            </a>
+          </div>
         </div>
         
         {% if site.logo %}
