@@ -151,3 +151,53 @@ QuantWolf_1.0/
 
 
 ### Note: v1.0 results include look-ahead bias for demonstration purposes. All performance metrics are from backtesting and walk-forward simulation. Production v2.0 will implement strict temporal constraints and live trading validation.
+
+### 📋 Sample Portfolio Output
+### Smart Allocation Results
+</pre>
+🏆 PORTFOLIO ALLOCATION BREAKDOWN:
+#1: PSIX    $10,981 (22.0%) | AUC: 0.616 | Excellent | magnitude | Strong
+#2: OUST    $10,355 (20.7%) | AUC: 0.597 | Good      | magnitude | Strong  
+#3: JHX     $9,810  (19.6%) | AUC: 0.581 | Good      | magnitude | Strong
+#4: PLAY    $6,508  (13.0%) | AUC: 0.538 | Fair      | magnitude | Weak
+#5: HOOD    $6,478  (13.0%) | AUC: 0.534 | Fair      | 3day      | Weak
+#6: NVMI    $5,868  (11.7%) | AUC: 0.513 | Poor      | magnitude | None
+
+💰 ALLOCATION SUMMARY:
+- Strong Signals: $31,146 (62.3%) across 3 stocks
+- Weak Signals:  $12,986 (26.0%) across 2 stocks  
+- Risk-Adjusted: 2 high-risk positions (42.7% capital)
+- Expected Alpha: 21.56 points from ML edge
+</pre>
+
+### Key Algorithm Features Demonstrated
+
+* **Signal-Weighted Allocation:** Higher AUC scores receive larger allocations
+* **Risk Controls:** Maximum 22% single position, diversified across prediction types
+* **ML Categories:** Strong signals get 15%+ minimum allocation
+* **Prediction Diversity:** Mix of magnitude and 3-day predictions for robustness
+
+### 🛠️ Technical Implementation & Setup
+### Core Dependencies
+
+</pre>
+
+# ML & Data Processing
+torch>=1.9.0              # Transformer model implementation
+pandas>=1.3.0              # Data manipulation
+numpy>=1.21.0              # Numerical computing
+scikit-learn>=1.0.0        # ML metrics and preprocessing
+yfinance>=0.1.70           # Financial data API
+
+
+# Sentiment Analysis
+openai>=0.27.0             # GPT-4 integration
+requests>=2.26.0           # Web scraping
+
+# Visualization & Analysis
+matplotlib>=3.4.0          # Plotting
+seaborn>=0.11.0           # Statistical visualization
+
+</pre>
+
+### ML Feature Engineering Pipeline
