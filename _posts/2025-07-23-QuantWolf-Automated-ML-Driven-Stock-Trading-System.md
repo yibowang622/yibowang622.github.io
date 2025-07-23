@@ -199,3 +199,153 @@ seaborn>=0.11.0           # Statistical visualization
 </pre>
 
 ### ML Feature Engineering Pipeline
+<pre>
+# 18 Technical Features Used in Transformer Model
+feature_names = [
+    'Return', 'Momentum', 'RSI', 'Volume_MA',           # Basic momentum
+    'Momentum_3', 'Momentum_10', 'Momentum_20',         # Multi-timeframe momentum  
+    'BB_position', 'MACD', 'MACD_histogram',           # Bollinger & MACD signals
+    'Vol_ratio', 'Price_position',                      # Volatility & price patterns
+    'Volume_momentum', 'Price_volume_trend',            # Volume analysis
+    'Distance_from_high', 'Distance_from_low',          # Support/resistance
+    'Intraday_return', 'Gap'                           # Market microstructure
+]
+
+# Transformer Architecture
+SEQ_LEN = 20               # 20-day lookback window
+d_model = 48               # Embedding dimension
+nhead = 6                  # Attention heads
+num_layers = 3             # Encoder layers
+</pre>
+
+### Smart Allocation Parameters
+<pre>
+python# Portfolio Configuration
+TOTAL_CAPITAL = 50000
+MIN_ALLOCATION = 2000      # Minimum position size
+MAX_ALLOCATION = 12000     # Maximum position size (24% cap)
+
+# ML Signal Weighting
+ML_WEIGHT = 0.6            # ML signal importance
+CONFIDENCE_WEIGHT = 0.4    # Confidence score importance
+DIVERSIFICATION_BONUS = 0.05 # Prediction type diversity bonus
+
+# Risk Management
+MAX_SINGLE_POSITION = 0.25  # 25% position limit
+MIN_STRONG_ALLOCATION = 0.15 # 15% minimum for strong signals
+</pre>
+  
+### Backtesting & Validation Setup
+<pre>
+# Backtesting Parameters
+INITIAL_CAPITAL = 50000
+REBALANCING_FREQUENCY = "monthly"
+TRANSACTION_COST = 0.001   # 0.1% per trade
+CASH_THRESHOLD = 0.05      # 5% cash buffer
+
+# Walk-Forward Validation
+SIMULATION_PERIODS = 8     # Number of time periods
+HOLDING_PERIOD = 30        # Days per simulation
+LOOKBACK_WINDOW = 60       # Training data window
+
+# Risk Controls
+STOP_LOSS = None           # No stop-loss in v1.0
+TAKE_PROFIT = None         # No take-profit in v1.0  
+MAX_POSITION_SIZE = 0.3    # 30% maximum position
+</pre>
+
+### 🔄 Walk-Forward Validation Framework
+### Simulation Configuration 
+<pre>
+# Walk-Forward Simulation Parameters
+CURRENT_TICKERS = ["OUST", "HOOD", "PSIX", "JHX", "NVMI", "PLAY"]
+TOTAL_CAPITAL = 50000
+ALLOCATION_METHOD = "equal"  # Equal weight validation
+MIN_ALLOCATION = 1000
+MAX_ALLOCATION = 8500
+
+# Validation Setup
+SIMULATION_PERIODS = 8         # Number of time periods tested
+HOLDING_PERIOD = 30            # Days per simulation
+TRANSACTION_COST_PCT = 0.001   # 0.1% per trade
+BUFFER_DAYS = 5                # Data availability buffer
+
+# Output Files
+WALKFORWARD_RESULTS_FILE = "walkforward_results.csv"
+WALKFORWARD_SUMMARY_FILE = "walkforward_summary.json"
+EQUITY_CURVE_FILE = "walkforward_equity_curve.csv"
+</pre>
+
+### Walk-Forward Validation Results
+### Strategy Performance Summary:
+<pre>
+🎯 WALK-FORWARD VALIDATION RESULTS (8 Periods)
+- Total Simulations: 8 | Success Rate: 100%
+- Win Rate: 87.5% (7/8 periods profitable)
+- Average Period Return: +12.70%
+- Total Portfolio Return: +146.2%
+- Sharpe Ratio: 0.98 | Volatility: 12.90%
+
+📊 INDIVIDUAL STOCK PERFORMANCE:
+- PSIX: +39.47% avg return (best: +104.45%, worst: -3.35%)
+- OUST: +17.93% avg return (best: +77.14%, worst: -47.15%)  
+- HOOD: +15.86% avg return (best: +56.75%, worst: -14.42%)
+- NVMI: +4.07% avg return (best: +26.47%, worst: -11.53%)
+- JHX: +0.18% avg return (best: +17.13%, worst: -17.62%)
+- PLAY: -1.33% avg return (best: +14.86%, worst: -19.03%)
+
+⏱️ TIMING ANALYSIS:
+- Average Holding Period: 29.9 days
+- Best Period: +27.78% (2024-05-01 to 2024-05-31)
+- Worst Period: -10.45% (2024-04-01 to 2024-05-01)
+- Annualized Return Estimate: +107.3%
+</pre>
+
+### Key Validation Features
+
+* **Temporal Constraints:** No look-ahead bias in simulation periods
+* **Transaction Costs:** 0.1% realistic trading costs included
+* **Multiple Timeframes:** 8 different market periods tested
+* **Equal Weight Baseline:** Conservative allocation for validation
+* **Comprehensive Metrics:** Returns, Sharpe ratio, volatility, win rates
+* **Individual Stock Analysis:** Performance breakdown by ticker
+* **Visual Dashboard:** Equity curve, return distribution, period analysis
+
+### 🔮 v2.0 Production Roadmap
+### 🔍 Smart Signal Selection Enhancements
+
+* **Multi-Criteria Filtering:** Strict temporal alignment of macro (sector), micro (valuation), sentiment, and ML signals
+* **Signal Confidence Scoring:** Weighted composite scores when all criteria align vs. partial matches
+* **Dynamic Thresholds:** Adaptive filtering based on market volatility and regime detection
+* **Signal Decay Models:** Time-weighted importance for news sentiment and technical indicators
+
+### 📈 Advanced Portfolio Management
+
+* **Multi-Period Allocation:** Dynamic rebalancing based on signal strength changes over time
+* **Risk-Adjusted Position Sizing:** Volatility-based allocation with correlation adjustments
+* **Performance Attribution:** Decompose returns by signal type (sentiment vs ML vs technical)
+* **Benchmark Integration:** Real-time comparison against sector ETFs and market indices
+
+### 🧱 Production Architecture Improvements
+
+* **Strict Module Interfaces:** Standardized data contracts between pipeline stages
+* **Hot-Swappable Components:** Plugin architecture for ML models, sentiment analyzers, and data sources
+* **Data Lineage Tracking:** Full audit trail from raw news to final portfolio decisions
+* **Automated Testing:** Unit tests and integration tests for each pipeline module
+
+### ⚠️ Bias Control & Validation
+
+* **Temporal Data Access:** Point-in-time database ensuring no future data leakage
+* **News Timestamp Validation:** Strict publication time vs. market close alignment
+* **ML Prediction Constraints:** Forward-only feature engineering with proper time splits
+* **Walk-Forward Expansion:** Continuous out-of-sample testing with growing training windows
+
+### Infrastructure & Monitoring
+
+* **Automated Pipeline Scheduling:** Daily execution with dependency management
+* **Data Quality Monitoring:** Alerts for missing data, API failures, and signal anomalies
+* **Performance Tracking:** Live monitoring of signal accuracy and portfolio metrics
+* **Configuration Management:** Environment-based settings for development vs production
+
+### ⚠️ Disclaimer
+This software is for educational and research purposes only. Past performance does not guarantee future results. Trading involves substantial risk of loss. Please consult with a qualified financial advisor before making investment decisions.
