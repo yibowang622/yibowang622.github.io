@@ -255,7 +255,7 @@ MAX_POSITION_SIZE = 0.3    # 30% maximum position
 </pre>
 
 <div align="left">
-  <img src="https://github.com/yibowang622/yibowang622.github.io/blob/main/assets/images/2025-07-23-final_equity_curve.png" width="70%">
+  <img src="https://github.com/yibowang622/yibowang622.github.io/raw/main/assets/images/2025-07-23-final_equity_curve.png" width="70%">
 </div>
 
 
