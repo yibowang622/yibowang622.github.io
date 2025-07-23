@@ -301,8 +301,7 @@ EQUITY_CURVE_FILE = "walkforward_equity_curve.csv"
 - Annualized Return Estimate: +107.3%
 </pre>
 
-images:
- - "/assets/images/assets/images/2025-07-23-walkforward_performance.png"
+![Walk-Forward Performance](./assets/2025-07-23-walkforward_performance.png)
 
 ### Key Validation Features
 
