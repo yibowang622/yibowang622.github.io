@@ -102,18 +102,21 @@ The QuantWolf system operates through a 12-step modular pipeline:
 <pre>
 QuantWolf_1.0/
 │
-├── step1_scraper/
+├── step1_data_ingestion/
 │   ├── scrapers.py
 │   └── data/
-├── step2_sentiment_analysis/
+├── step2_sentiment_engine/
 │   ├── gpt4_analyzer.py
 │   └── results/
-├── step3_sector_and_stock_filtering/
+├── step3_sector_industries_filtering/
 │   ├── sector_analysis.py
 │   ├── industry_ranking.py
 │   └── data/
-├── step7_match_sentiment_and_ml_score/
-├── step8_ml_prediction_filtering/
+├── step4_ticker_filtering/
+├── step5_ticker_ranking_short_term/
+├── step6_ticker_ranking_long_term/
+├── step7_match_ticker_filter_sentiment_score/
+├── step8_ml_prediction_and_final_signals/
 ├── step9_optional_ml_filter/
 ├── step10_asset_allocation_simulation/
 ├── step11_backtesting_and_metrics/
@@ -122,6 +125,7 @@ QuantWolf_1.0/
 ├── requirements_QuantWolf_demo_1.txt
 └── README.md
 </pre>
+
 ### 📊 Performance Metrics (v1.0 Demo Results)
 ### Backtesting Performance (2023-01-03 to 2024-12-31)
 
