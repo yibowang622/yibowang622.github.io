@@ -20,7 +20,7 @@ future: true
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: "AI-Driven Stock Trading: Quantitative Strategies with Machine Learning"
+title: "🐺 QuantWolf: AI-Driven Stock Trading Strategies with Machine Learning and Sentiment Intelligence"
 email: yibowang622@gmail.com
 description: "Exploring machine learning, quantitative trading, and AI-driven stock predictions."
 baseurl: "" # the subpath of your site, e.g. /blog
