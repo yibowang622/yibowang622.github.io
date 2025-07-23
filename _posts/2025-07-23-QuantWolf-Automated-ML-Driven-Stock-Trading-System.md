@@ -92,17 +92,25 @@ The QuantWolf system operates through a 12-step modular pipeline:
 ### 📦 Project Structure 
 
 QuantWolf_1.0/
-├── step1_scraper/              # News scraping modules
-├── step2_sentiment_analysis/   # NLP sentiment processing
-├── step3_sector_and_stock_filtering/  # Technical & fundamental analysis
-├── step7_match_sentiment_and_ml_score/  # Signal fusion
-├── step8_ml_prediction_filtering/     # ML model integration
-├── step9_optional_ml_filter/   # Advanced filtering
-├── step10_asset_allocation_simulation/  # Portfolio allocation
-├── step11_backtesting_and_metrics/     # Performance evaluation
-├── step12_walkforward_simulation/      # Validation framework
-├── launcher.py                 # Main execution script
-├── requirements_QuantWolf_demo_1.txt  # Dependencies
+│
+├── step1_scraper/
+│   ├── scrapers.py
+│   └── data/
+├── step2_sentiment_analysis/
+│   ├── gpt4_analyzer.py
+│   └── results/
+├── step3_sector_and_stock_filtering/
+│   ├── sector_analysis.py
+│   ├── industry_ranking.py
+│   └── data/
+├── step7_match_sentiment_and_ml_score/
+├── step8_ml_prediction_filtering/
+├── step9_optional_ml_filter/
+├── step10_asset_allocation_simulation/
+├── step11_backtesting_and_metrics/
+├── step12_walkforward_simulation/
+├── launcher.py
+├── requirements_QuantWolf_demo_1.txt
 └── README.md
 
 ### 📊 Performance Metrics (v1.0 Demo Results)
