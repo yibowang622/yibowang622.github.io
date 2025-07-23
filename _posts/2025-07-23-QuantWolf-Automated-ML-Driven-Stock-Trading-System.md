@@ -4,9 +4,12 @@ title: "🐺 QuantWolf: Automated ML-Driven Stock Trading System"
 date: 2025-07-23
 categories: ["machine learning", "quantitative trading"]
 ---
-<p style="text-align: justify;">
-  This paragraph is justified. It spans the width and aligns text to both left and right margins.
-</p>
+<style>
+p {
+  text-align: left !important;
+  text-justify: none;
+}
+</style>
 
 ### 📚 Introduction
 QuantWolf is a sophisticated end-to-end automated trading pipeline that combines machine learning, sentiment analysis, and technical indicators to identify high-conviction stock trading opportunities. Built with modularity and scalability in mind, it processes real-time financial data to generate actionable trading signals.
