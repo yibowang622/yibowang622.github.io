@@ -301,8 +301,9 @@ EQUITY_CURVE_FILE = "walkforward_equity_curve.csv"
 - Annualized Return Estimate: +107.3%
 </pre>
 
-### Walk-Forward Validation Dashboard
-<img src="https://github.com/yibowang622/yibowang622.github.io/raw/main/assets/images/2025-07-23-walkforward_performance.png" alt="Walk-Forward Performance Dashboard" width="60%">
+<div align="left">
+  <img src="https://github.com/yibowang622/yibowang622.github.io/raw/main/assets/images/2025-07-23-walkforward_performance.png" alt="Walk-Forward Performance Dashboard" width="70%">
+</div>
 
 ### Key Validation Features
 
