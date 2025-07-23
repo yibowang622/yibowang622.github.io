@@ -15,13 +15,6 @@ At its core, QuantWolf leverages a custom Transformer-based binary classifier wi
 What sets QuantWolf apart is its hierarchical filtering approach: starting with 11 major Yahoo Finance sectors (^YH311-^YH207), ranking key industries using proprietary dual-strategy scoring (combining momentum scores up to 7.0 points and stability scores up to 6.0 points), then selecting individual tickers within winning industries. The system demonstrated impressive results in walk-forward validation with 87.5% win rate and 12.7% average period returns, though v1.0 includes look-ahead bias that will be addressed in production v2.0.
 
 Each component is designed as an independent module, allowing for rapid strategy iteration and A/B testing. The pipeline processes everything from sector analysis to executable trading signals with comprehensive backtesting (253% total returns in historical testing) and rigorous walk-forward validation ensuring statistical robustness. This architecture enables both systematic strategy development and production-ready automated execution.
-<style>
-/* Only justify paragraphs under the Introduction section */
-h3 + p, 
-.content p {
-  text-align: justify !important;
-  text-justify: inter-word;
-}
 
 ### 🚀 Key Highlights
 
