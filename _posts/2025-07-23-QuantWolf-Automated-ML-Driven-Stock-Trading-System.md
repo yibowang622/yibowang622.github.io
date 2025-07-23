@@ -16,14 +16,6 @@ What sets QuantWolf apart is its hierarchical filtering approach: starting with 
 
 Each component is designed as an independent module, allowing for rapid strategy iteration and A/B testing. The pipeline processes everything from sector analysis to executable trading signals with comprehensive backtesting (253% total returns in historical testing) and rigorous walk-forward validation ensuring statistical robustness. This architecture enables both systematic strategy development and production-ready automated execution.
 
-/* Only target paragraphs immediately under the Introduction section */
-.post-content .justified-intro p {
-  text-align: justify !important;
-  text-justify: inter-word;
-  hyphens: auto;
-  line-height: 1.6; /* Keep same line spacing */
-}
-
 ### 🚀 Key Highlights
 
 * **Hierarchical Analysis Framework:** Top-down approach from 11 sectors → key industries → individual stocks
