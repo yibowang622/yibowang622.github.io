@@ -254,6 +254,11 @@ TAKE_PROFIT = None         # No take-profit in v1.0
 MAX_POSITION_SIZE = 0.3    # 30% maximum position
 </pre>
 
+<div align="left">
+  <img src="https://github.com/yibowang622/yibowang622.github.io/blob/main/assets/images/2025-07-23-final_equity_curve.png" width="70%">
+</div>
+
+
 ### 🔄 Walk-Forward Validation Framework
 ### Simulation Configuration 
 <pre>
