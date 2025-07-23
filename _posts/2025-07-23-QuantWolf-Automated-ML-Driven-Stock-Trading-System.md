@@ -19,14 +19,12 @@ Each component is designed as an independent module, allowing for rapid strategy
 <style>
 .justified-intro p {
   text-align: justify !important;
-  text-align-last: justify !important;  /* Justify even the last line */
-  text-justify: inter-word;
+  text-align-last: justify !important;
+  text-justify: inter-character;        /* Character-level justification */
   word-spacing: normal;
-  letter-spacing: normal;
   hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   line-height: 1.6;
+  text-rendering: optimizeLegibility;
 }
 </style>
 
