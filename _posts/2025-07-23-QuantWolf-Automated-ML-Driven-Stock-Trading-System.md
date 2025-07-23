@@ -28,3 +28,24 @@ Each component is designed as an independent module, allowing for rapid strategy
 * **Production-Ready Architecture:** Modular design with comprehensive error handling and logging
 * **Rigorous Validation:** Walk-forward testing showing 87.5% win rate across multiple time periods
 * **Smart Risk Management:** Dynamic position sizing with ML signal-weighted allocation strategies
+
+### 🏗️ System Architecture
+Pipeline Overview
+The QuantWolf system operates through a 12-step modular pipeline:
+
+| Step | Module | Description |
+|------|--------|-------------|
+| 1 | News Scraping | CNBC financial news scraping using custom scrapers with JSON storage |
+| 2 | Sentiment Analysis | GPT-4 sentiment scoring on news articles for stock-specific bullish/bearish signals |
+| 3.1 | Sector Performance | Yahoo Finance sector indices analysis (^YH311-^YH207) for 1D, 5D, 15D, 30D returns |
+| 3.2 | Industry Analysis | MACD and yield analysis across key industries with market weight calculations |
+| 3.3 | Industry Ranking | Proprietary dual-strategy scoring: Short-term (7.0 max) + Long-term (6.0 max) composite scores |
+| 4 | Ticker Selection | Individual stock filtering within top-ranked industries using technical indicators |
+| 5 | Sentiment Integration | Merge news sentiment scores with technically filtered stock candidates |
+| 6 | Technical Validation | MACD, RSI, SMA confirmation signals for final stock selection |
+| 7 | ML Signal Generation | Transformer-based predictions (1-day, 3-day, magnitude) with AUC scoring |
+| 8 | ML Filtering | Confidence-based filtering using prediction thresholds and signal strength |
+| 9 | Signal Fusion | Combine sentiment, technical, and ML signals into composite conviction scores |
+| 10 | Smart Allocation | ML signal-weighted position sizing with risk constraints and diversification |
+| 11 | Backtesting Engine | Comprehensive performance analysis with Sharpe ratio, drawdown, win rate metrics |
+| 12 | Walk-Forward Validation | Time-series simulation to validate strategy robustness and eliminate look-ahead bias |
