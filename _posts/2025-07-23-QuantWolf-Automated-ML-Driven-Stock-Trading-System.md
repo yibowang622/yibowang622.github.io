@@ -154,7 +154,7 @@ QuantWolf_1.0/
 
 ### 📋 Sample Portfolio Output
 ### Smart Allocation Results
-</pre>
+<pre>
 🏆 PORTFOLIO ALLOCATION BREAKDOWN:
 #1: PSIX    $10,981 (22.0%) | AUC: 0.616 | Excellent | magnitude | Strong
 #2: OUST    $10,355 (20.7%) | AUC: 0.597 | Good      | magnitude | Strong  
@@ -180,8 +180,7 @@ QuantWolf_1.0/
 ### 🛠️ Technical Implementation & Setup
 ### Core Dependencies
 
-</pre>
-
+<pre>
 # ML & Data Processing
 torch>=1.9.0              # Transformer model implementation
 pandas>=1.3.0              # Data manipulation
@@ -197,7 +196,6 @@ requests>=2.26.0           # Web scraping
 # Visualization & Analysis
 matplotlib>=3.4.0          # Plotting
 seaborn>=0.11.0           # Statistical visualization
-
 </pre>
 
 ### ML Feature Engineering Pipeline
