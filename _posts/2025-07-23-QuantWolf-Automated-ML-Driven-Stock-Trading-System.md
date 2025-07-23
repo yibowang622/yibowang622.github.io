@@ -90,7 +90,7 @@ The QuantWolf system operates through a 12-step modular pipeline:
 * **Walk-Forward Validation:** Eliminates look-ahead bias through temporal simulation
 
 ### 📦 Project Structure 
-
+<pre>
 QuantWolf_1.0/
 │
 ├── step1_scraper/
@@ -112,7 +112,7 @@ QuantWolf_1.0/
 ├── launcher.py
 ├── requirements_QuantWolf_demo_1.txt
 └── README.md
-
+</pre>
 ### 📊 Performance Metrics (v1.0 Demo Results)
 ### Backtesting Performance (2023-01-03 to 2024-12-31)
 
