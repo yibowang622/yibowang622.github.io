@@ -24,7 +24,7 @@ What sets QuantWolf apart is its hierarchical filtering approach: starting with 
 individual tickers within winning industries. The system demonstrated impressive results in walk-forward validation with 87.5% win rate and 12.7% average period returns, though v1.0 includes look-ahead bias that will be addressed in production v2.0.
 </p>
 <p align="justify">
-Each component is designed as an independent module, allowing for rapid strategy iteration and A/B testing. The pipeline processes everything from sector analysis to executable trading signals with comprehensive backtesting (253% total returns in historical testing) and rigorous walk-forward 
+Designed each component as an independent module, enabling fast iteration and future integration of new signals and strategies. The pipeline processes everything from sector analysis to executable trading signals with comprehensive backtesting (253% total returns in historical testing) and rigorous walk-forward 
 validation ensuring statistical robustness. This architecture enables both systematic strategy development and production-ready automated execution.
 </p>
 
