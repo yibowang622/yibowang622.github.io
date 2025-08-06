@@ -101,7 +101,7 @@ I analyzed how predictive power varies across different time horizons:
 
 ### Visualization Insights
 
-![Signal Decay Analysis](assets/images/signal_decay_analysis.png)
+![Signal Decay Analysis](/assets/images/signal_decay_analysis.png)
 *Figure 1: Signal decay across prediction horizons showing clear degradation from 7.5% to 1.4% correlation*
 
 * **Mean correlation** decreases dramatically with horizon length
@@ -146,7 +146,7 @@ Top contributing features to the composite signal:
 
 ### Robustness Testing
 
-![Signal Robustness Over Time](assets/images/signal_robustness.png)
+![Signal Robustness Over Time](/assets/images/signal_robustness.png)
 *Figure 2: Signal performance across 60+ time windows showing 17.5% mean correlation with 4.13 robustness ratio*
 
 ### Robustness Testing
@@ -201,7 +201,6 @@ Most robust features across market regimes:
 | `865224234b` | 11.67% | 2.92% | 4.00 |
 | `b66accf4d4` | 11.46% | 3.24% | 3.53 |
 
----
 ## 📊 **Final Results Summary**
 
 | Metric | Value | Significance |
@@ -211,8 +210,6 @@ Most robust features across market regimes:
 | **Signal Robustness** | **4.13 ratio** | Highly stable over time |
 | **Improvement Potential** | **+38.2%** | Clear optimization path |
 | **Feature Efficiency** | **20 from 86** | 77% dimensionality reduction |
-
----
 
 ### Performance Improvement Strategy
 **Regime Filtering Approach:**
