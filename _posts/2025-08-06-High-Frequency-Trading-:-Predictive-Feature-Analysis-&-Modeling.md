@@ -15,7 +15,7 @@ This project demonstrates a complete quantitative research workflow for high-fre
 
 **📊 Performance Highlight:** Sideways_Calm regime delivers 21.72% correlation - 56% better than the overall 13.88% baseline.
 
-**⚡ Business Impact:** Regime filtering strategy offers 38.2% performance improvement by trading only 65.4% of the time.
+**⚡ Business Impact:** Regime filtering strategy offers 20.9% performance improvement by trading only 65.4% of the time.
 
 ### Key Results
 * **Signal Strength**: 15.96% correlation with 1-second future returns
@@ -79,45 +79,39 @@ I analyzed how predictive power varies across different time horizons:
 
 | Horizon | Mean Correlation | Max Correlation | Significant Features | Quality Ratio |
 |---------|------------------|-----------------|---------------------|---------------|
-| 1s      | 7.50%           | 12.20%          | 50                 | **3.204**     |
-| 2s      | 6.90%           | 11.20%          | 50                 | 3.102         |
-| 5s      | 4.90%           | 7.80%           | 50                 | 2.881         |
-| 10s     | 3.50%           | 6.00%           | 50                 | 2.811         |
-| 30s     | 1.80%           | 3.60%           | 42                 | 2.384         |
-| 60s     | 1.40%           | 3.10%           | 36                 | 2.386         |
+| 1s      | 7.50%            | 12.20%          | 50                  | **3.204**     |
+| 2s      | 6.90%            | 11.20%          | 50                  | 3.102         |
+| 5s      | 4.90%            | 7.80%           | 50                  | 2.881         |
+| 10s     | 3.50%            | 6.00%           | 50                  | 2.811         |
+| 30s     | 1.80%            | 3.60%           | 42                  | 2.384         |
+| 60s     | 1.40%            | 3.10%           | 36                  | 2.386         |
 
 ### Key Findings
 
-1.**Optimal Horizon:** 1-second predictions provide the best signal-to-noise ratio
-2.**Decay Pattern:** Gradual degradation of predictive power over longer horizons
-3.**Signal Persistence:** Even at 60 seconds, meaningful correlations remain
-4.**Quality Assessment:** 1-second horizon offers excellent balance of strength and consistency
-
-### Visualization Insights
-
-* **Mean correlation** decreases monotonically with horizon length
-* **Number of significant features** drops from 47 to 28 across horizons
-* **Signal stability** remains high even as absolute correlation declines
-
-### Visualization Insights
+1.**Optimal Horizon:** 1-second predictions provide the best signal-to-noise ratio<br>
+2.**Decay Pattern:** Gradual degradation of predictive power over longer horizons<br>
+3.**Signal Persistence:** Even at 60 seconds, meaningful correlations remain<br>
+4.**Quality Assessment:** 1-second horizon offers excellent balance of strength and consistency<br>
 
 ![Signal Decay Analysis](/assets/images/signal_decay_analysis.png)
 *Figure 1: Signal decay across prediction horizons showing clear degradation from 7.5% to 1.4% correlation*
 
-* **Mean correlation** decreases dramatically with horizon length
-* **Number of significant features** drops from 50 to 36 across horizons  
+### Visualization Insights
+* **Mean correlation** decreases monotonically with horizon length
+* **Number of significant features** remains at 50 for horizons up to 30 seconds, then drops to 36 at 60 seconds
 * **Signal stability** shows consistent decay pattern
+
 
 ### 🤖 Part 3: Prediction Model Construction
 ### Model Comparison
 
 I evaluated three machine learning approaches using proper time series cross-validation:
 
-| Model | CV Correlation | CV MSE | Stability | Interpretation |
-|-------|---------------|---------|-----------|----------------|
-| **Ridge** | **15.96% ± 3.4%** | 0.000000 | Low | **Best Overall** |
-| Linear | 15.84% ± 3.4% | 0.000000 | Low | Close Second |  
-| Random Forest | 11.67% ± 2.3% | 0.000000 | Low | Underperforms |
+| Model         | CV Correlation    | CV MSE   | Stability | Interpretation   |
+|---------------|-------------------|----------|-----------|------------------|
+| **Ridge**     | **15.96% ± 3.4%** | 0.000000 | Low       | **Best Overall** |
+| Linear        | 15.84% ± 3.4%     | 0.000000 | Low       | Close Second     |  
+| Random Forest | 11.67% ± 2.3%     | 0.000000 | Low       | Underperforms    |
 
 ### Composite Signal Development
 
@@ -126,12 +120,12 @@ I created two approaches to signal combination:
 ### 1. Correlation-Weighted Signal
 
 * Weighted average based on individual feature correlations
-* Result: 11.2% correlation with target returns
+* Result: 12.62% correlation with target returns
 
 ### 2. Machine Learning Signal (Ridge)
 
 * Full Ridge regression model with regularization
-* Result: **13.9% correlation with target returns**
+* Result: **13.88% correlation with target returns**
 
 ### Feature Importance Analysis
 Top contributing features to the composite signal:
@@ -208,17 +202,17 @@ Most robust features across market regimes:
 | **Ridge Model Correlation** | **15.96%** | Exceeds industry benchmarks |
 | **Best Regime Performance** | **21.72%** | Exceptional for HFT |
 | **Signal Robustness** | **4.13 ratio** | Highly stable over time |
-| **Improvement Potential** | **+38.2%** | Clear optimization path |
+| **Improvement Potential** | **+20.9%** | Clear optimization path |
 | **Feature Efficiency** | **20 from 86** | 77% dimensionality reduction |
 
 ### Performance Improvement Strategy
 **Regime Filtering Approach:**
 
 * Trade only in favorable regimes: Sideways_Calm, Bull_Calm, Normal
-* Expected correlation improvement: **21.72% vs 15.96%** overall (+38.2%)
-* Coverage: 65.4% of trading time
-* Risk reduction: Avoid 34.6% of volatile periods
-
+* Expected correlation improvement: **19.18% vs 15.87%** baseline (+20.9%)
+* Coverage: Trade 75% of the time (450K+ observations)
+* Risk reduction: Avoid 25.0% of volatile periods
+  
 ### Implementation Roadmap
 **Phase 1: Core Signal Deployment**
 
@@ -230,7 +224,7 @@ Most robust features across market regimes:
 
 * Integrate real-time regime detection
 * Implement dynamic position sizing based on regime confidence
-* Expected improvement: +38.2% signal strength
+* Expected improvement: +20.9% signal strength
 
 **Phase 3: Advanced Optimization**
 
@@ -240,10 +234,10 @@ Most robust features across market regimes:
 
 ### Risk Management Considerations
 
-1.**Model Decay:** Monitor signal performance for degradation over time
-2.**Regime Shifts:** Implement early detection of regime transitions
-3.**Feature Stability:** Regular validation of feature importance rankings
-4.**Market Impact:** Scale position sizes to avoid signal degradation
+1.**Model Decay:** Monitor signal performance for degradation over time<br>
+2.**Regime Shifts:** Implement early detection of regime transitions<br>
+3.**Feature Stability:** Regular validation of feature importance rankings<br>
+4.**Market Impact:** Scale position sizes to avoid signal degradation<br>
 
 ### 📈 Technical Implementation
 ### Code Architecture
@@ -283,11 +277,11 @@ class HFTSignalGenerator:
 ### 🎯 Conclusions
 ### Key Achievements
 
-1.**Signal Development:** Created a robust 15.96% correlation signal for HFT
-2.**Horizon Optimization:** Identified 1-second as optimal prediction timeframe
-3.**Model Selection:** Ridge regression provides best risk-adjusted performance
-4.**Regime Analysis:** Discovered 38.2% improvement potential through regime filtering
-5.**Business Value:** Delivered actionable strategy with clear implementation path
+1.**Signal Development:** Created a robust 15.96% correlation signal for HFT<br>
+2.**Horizon Optimization:** Identified 1-second as optimal prediction timeframe<br>
+3.**Model Selection:** Ridge regression provides best risk-adjusted performance<br>
+4.**Regime Analysis:** Discovered 20.9% improvement potential through regime filtering<br>
+5.**Business Value:** Delivered actionable strategy with clear implementation path<br>
 
 ### Academic Contributions
 
@@ -298,10 +292,10 @@ class HFTSignalGenerator:
 
 ### Next Steps
 
-1.**Live Testing:** Deploy in paper trading environment
-2.**Feature Engineering:** Develop regime-specific features
-3.**Risk Management:** Implement dynamic position sizing
-4.**Performance Attribution:** Track P&L by regime and feature
+1.**Live Testing:** Deploy in paper trading environment<br>
+2.**Feature Engineering:** Develop regime-specific features<br>
+3.**Risk Management:** Implement dynamic position sizing<br>
+4.**Performance Attribution:** Track P&L by regime and feature<br>
 
 
 ### 📚 Methodology Notes
