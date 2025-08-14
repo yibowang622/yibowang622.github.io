@@ -8,12 +8,12 @@ A comprehensive analysis of engineered features for short-term price prediction 
 
 ### 🎯 Executive Summary
 <p align="justify">
-This project demonstrates a complete quantitative research workflow for high-frequency trading (HFT) signal development. Using 7 days of 1-second market data with 86 engineered features, I developed a predictive model achieving 15.96% correlation with future returns and identified 38.2% improvement potential through regime-aware trading.
+This project demonstrates a complete quantitative research workflow for high-frequency trading (HFT) signal development. Using 7 days of 1-second market data with 86 engineered features, I developed a predictive model achieving 15.96% correlation with future returns and identified 20.9% improvement potential through regime-aware trading.
 </p>
 
 **🎯 Key Insight:** The 1-second horizon provides 7.5% mean correlation compared to just 1.4% at 60 seconds - a 5x improvement in signal strength.
 
-**📊 Performance Highlight:** Sideways_Calm regime delivers 21.72% correlation - 56% better than the overall 13.9% baseline.
+**📊 Performance Highlight:** Sideways_Calm regime delivers 21.72% correlation - 56% better than the overall 13.88% baseline.
 
 **⚡ Business Impact:** Regime filtering strategy offers 38.2% performance improvement by trading only 65.4% of the time.
 
